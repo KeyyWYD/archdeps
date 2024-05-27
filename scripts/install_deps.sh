@@ -7,7 +7,7 @@ sudo ()
 }
 
 
-
+# Dependencies & Important software
 sudo pacman -Sy &&
 sudo pacman -S stow \
 	zsh \
@@ -22,6 +22,8 @@ sudo pacman -S stow \
 	waybar \
 	mako \
 	kitty \
+ 	fastfetch \
+  	starship \
 	ttf-mononoki-nerd --noconfirm &&
 
 git clone https://aur.archlinux.org/swww.git ~/swww &&
