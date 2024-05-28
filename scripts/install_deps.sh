@@ -9,7 +9,8 @@ sudo ()
 
 # Dependencies & Important software
 sudo pacman -Sy &&
-sudo pacman -S intel-ucode \
+sudo pacman -S --noconfirm 
+	intel-ucode \
 	alsa-utils \
  	sof-firmare \
   	alsa-firmware \
