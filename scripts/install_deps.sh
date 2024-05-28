@@ -6,29 +6,31 @@ sudo ()
     "$@"
 }
 
-
-# Dependencies & Important software
 sudo pacman -Sy &&
-sudo pacman -S --noconfirm 
-	intel-ucode \
-	alsa-utils \
- 	sof-firmare \
-  	alsa-firmware \
-	stow \
-	zsh \
-	thefuck \
-	zoxide \
-	playerctl \
-	inotify-tools \
-	hyprland xdg-desktop-portal-hyprland \
-	polkit-gnome \
-	rofi-wayland \
-	udiskie \
-	waybar \
-	mako \
-	kitty \
-  	starship \
-	ttf-mononoki-nerd --noconfirm &&
+# Main Packages
+sudo pacman -S intel-ucode \
+    sof-firmware \
+    pacman-contrib \
+    networkmanager \
+    alsa-firmware \
+    alsa-utils \
+    thermald \
+    tlp \
+    stow \
+    zsh \
+    thefuck \
+    zoxide \
+    playerctl \
+    inotify-tools \
+    hyprland xdg-desktop-portal-hyprland \
+    polkit-gnome \
+    rofi-wayland \
+    udiskie \
+    waybar \
+    mako \
+    kitty \
+    starship \
+    ttf-mononoki-nerd --noconfirm &&
 
 git clone https://aur.archlinux.org/swww.git ~/swww &&
 cd ~/swww &&
