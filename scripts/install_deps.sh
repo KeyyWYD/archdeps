@@ -22,7 +22,6 @@ sudo pacman -S stow \
 	waybar \
 	mako \
 	kitty \
- 	fastfetch \
   	starship \
 	ttf-mononoki-nerd --noconfirm &&
 
