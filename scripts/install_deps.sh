@@ -9,7 +9,11 @@ sudo ()
 
 # Dependencies & Important software
 sudo pacman -Sy &&
-sudo pacman -S stow \
+sudo pacman -S intel-ucode \
+	alsa-utils \
+ 	sof-firmare \
+  	alsa-firmware \
+	stow \
 	zsh \
 	thefuck \
 	zoxide \
