@@ -1,4 +1,5 @@
 #!/bin/bash
+# All dependencies
 
 sudo ()
 {
@@ -25,31 +26,20 @@ sudo pacman -S sof-firmware \
     udiskie \
     waybar \
     mako \
-    kitty \
+    alacritty \
     starship \
+    xdg-user-dirs \
+    ttf-cascadia-code-nerd \
     ttf-mononoki-nerd --noconfirm &&
 
-git clone https://aur.archlinux.org/swww.git ~/swww &&
-cd ~/swww &&
-makepkg -si --noconfirm &&
-cd ../ &&
-rm -rf ~/swww &&
+cd ~/Downloads
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -si
 
-git clone https://aur.archlinux.org/fluent-gtk-theme.git ~/fluent-gtk-theme &&
-cd ~/fluent-gtk-theme &&
-makepkg -si --noconfirm &&
-cd ../ &&
-rm -rf ~/fluent-gtk-theme &&
-
-git clone https://aur.archlinux.org/bibata-cursor-theme-bin.git ~/bibata-cursor-theme &&
-cd ~/bibata-cursor-theme &&
-makepkg -si --noconfirm &&
-cd ../ &&
-rm -rf ~/bibata-cursor-theme &&
-
-if [ "$(whoami)" != "build" ]; then
-	chsh -s $(which zsh) $(whoami)
-fi &&
+yay -S --noconfirm swww &&
+yay -S --noconfirm fluent-gtk-theme &&
+yay -S --noconfirm bibata-cursor-theme-bin &&
 
 mv ~/.zshrc ~/.zshrc_old
 
