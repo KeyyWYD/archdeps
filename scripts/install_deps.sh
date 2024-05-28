@@ -8,10 +8,8 @@ sudo ()
 
 sudo pacman -Sy &&
 # Main Packages
-sudo pacman -S intel-ucode \
-    sof-firmware \
+sudo pacman -S sof-firmware \
     pacman-contrib \
-    networkmanager \
     alsa-firmware \
     alsa-utils \
     thermald \
