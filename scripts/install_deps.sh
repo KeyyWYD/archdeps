@@ -9,8 +9,7 @@ sudo ()
 
 sudo pacman -Sy &&
 # Main Packages
-sudo pacman -S sof-firmware \
-    alsa-firmware \
+sudo pacman -S alsa-firmware \
     alsa-utils \
     thermald \
     tlp \
