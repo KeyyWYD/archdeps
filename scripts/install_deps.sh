@@ -31,8 +31,8 @@ sudo pacman -S alsa-firmware \
     ttf-cascadia-code-nerd \
     ttf-mononoki-nerd --noconfirm &&
 
-git clone https://aur.archlinux.org/yay.git ~Downloads/yay
-cd yay
+git clone https://aur.archlinux.org/yay.git ~/Downloads/yay
+cd ~/Downloads/yay
 makepkg -si
 
 yay -S --noconfirm swww &&
