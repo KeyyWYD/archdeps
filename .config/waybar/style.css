@@ -1,15 +1,5 @@
-/*ОБЩЕЕ*/
-* {
-  border-radius: 10px;
-  font-family: JetBrainsMono, Symbols Nerd Font;
-  font-size: 12px;
-}
 
-/*COLORS*/
-
-
-
-/*NORD*/
+/*-- Catppuccin Mocha --*/
 @define-color rosewater #f5e0dc;
 @define-color flamingo #f2cdcd;
 @define-color pink #f5c2e7;
@@ -37,25 +27,30 @@
 @define-color mantle #181825;
 @define-color crust #11111b;
 
-/*ВОРКСПЕЙСЫ*/
+* {
+  border: none;
+  border-radius: 10px;
+  font-family: JetBrainsMono, Symbols Nerd Font;
+  font-size: 12px;
+  min-height: 0;
+}
+
 window#waybar {
   background-color: @base;
   color: @base;
 }
 
 #workspaces button {
-  color: #f5f7fa;
-  padding: 0px 0px;
-  margin: 3px 5px;
-  background-color: @base;
+  background: @mantle;
   color: @text;
+  padding: 0px 10px;
+  margin: 5px 2px;
   border-radius: 10px;
 }
 
-
-#workspaces button:hover {
-  background: @surface0;
-  color: transparent;
+#workspaces button.active{
+  background: @surface1;
+  color: @maroon;
 }
 
 #workspaces button.focused {
@@ -67,7 +62,6 @@ window#waybar {
   background-color: @red;
 }
 
-/*МОДУЛИ*/
 #custom-menu {
   color: @base;
   background-image: linear-gradient(90deg, @peach 10%, @peach 80%);
@@ -77,11 +71,14 @@ window#waybar {
 }
 
 #window {
+  font-weight: bold;
+  font-family: "CaskaydiaCove Nerd Font Mono";
+  background: @surface0;
+  color: @text;
   padding: 0px 10px;
   margin: 5px 0px;
-  color: @text;
-  background: @surface0;
-  border-radius: 10px 10px 10px 10px;
+
+  border-radius: 10px;
 }
 
 #tray {
