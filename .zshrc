@@ -1,15 +1,22 @@
-# ~/.zshrc
+export ZSH=$HOME/.zsh
 
+### ---- load modules ----------------------------------------------------------
 pfetch
-eval "$(starship init zsh)"
 eval $(thefuck --alias)
+eval "$(starship init zsh)"
+eval "$(zoxide init zsh)"
 
-# Profile Management
+### ---- profile mgmt ----------------------------------------------------------
 alias rlp=". ~/.zshrc"
 alias ep1="codium ~/.zshrc"
 alias ep2="codium ~/.bashrc"
 
-# Git Shortcuts
+### ---- auto completion & suggestions, syntax highlighting --------------------
+source $ZSH/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+source $ZSH/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $ZSH/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+### ---- Git shortcuts ---------------------------------------------------------
 alias gcl='git clone'
 alias status='git status'
 alias gl='git pull'

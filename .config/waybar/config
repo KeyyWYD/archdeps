@@ -23,7 +23,7 @@
     "custom/menu": {
     "format": "<span color=\"#f5f7fa\">{icon}</span>",
     "format-icons": {"default": ["󰣇"]},
-    "on-click": "set $menu dmenu_path | rofi -show drun rofi -show drun -theme $HOME/.config/rofi/launchers/type-7/style-7.rasi | xargs swaymsg exec --",
+    "on-click": "set $menu dmenu_path | pkill rofi || rofi -show drun | xargs swaymsg exec --",
     "escape": true,
     "tooltip": false
     },
