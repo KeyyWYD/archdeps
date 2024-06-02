@@ -9,11 +9,6 @@ echo
 
 base_PKGS=(
 
-      # MICROCODE -----------------------------------------------------------
-
-      # 'amd-ucode'
-      'intel-ucode'
-
       # TERMINAL UTILITIES --------------------------------------------------
 
       'alacritty'
@@ -29,7 +24,6 @@ base_PKGS=(
       'dialog'
       'networkmanager'
       'network-manager-applet'
-      'dhclient'
       'libsecret'
       'ldns'
 
@@ -62,6 +56,7 @@ base_PKGS=(
       'playerctl'
       'udiskie'
       'mako'
+      'stow'
       'noto-fonts'
       'ttf-nerd-fonts-symbols'
       'ttf-cascadia-code-nerd'
