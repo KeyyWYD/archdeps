@@ -57,6 +57,7 @@ base_PKGS=(
       'playerctl'
       'udiskie'
       'mako'
+      'rofi'
       'stow'
       'noto-fonts'
       'ttf-nerd-fonts-symbols'
