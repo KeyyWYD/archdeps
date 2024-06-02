@@ -3,7 +3,7 @@
     "layer": "top",
     "height": 30,
     "width": 1360,
-    "margin-top": 2,
+    "margin-top": 3,
 
   // MODULES
     "modules-left": ["custom/menu", "hyprland/workspaces"],
@@ -64,27 +64,6 @@
       },
       "on-click": "pavucontrol",
       "tooltip": false
-    },
-
-    "pulseaudio": {
-    "scroll-step": 5,
-    "format": "{icon} {volume}%",
-    "format-bluetooth": "{volume}% {icon} {format_source}",
-    "format-bluetooth-muted": " {icon} {format_source}",
-    "format-muted": " {format_source}",
-    "format-source": "{volume}% ",
-    "format-source-muted": "",
-    "format-icons": {
-      "headphone": "",
-      "hands-free": "",
-      "headset": "",
-      "phone": "",
-      "portable": "",
-      "car": "",
-      "default": ["", "", ""]
-    },
-    "on-click": "pavucontrol",
-    "tooltip": false
     },
 
   // CPU

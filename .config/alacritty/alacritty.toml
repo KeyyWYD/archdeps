@@ -1,7 +1,7 @@
 [window]
 dimensions = { columns = 100, lines = 80 }
 padding = { x = 12, y = 8 }
-opacity = 0.75
+opacity = 0.6
 blur = true
 
 [scrolling]
