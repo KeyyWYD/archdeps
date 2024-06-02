@@ -6,15 +6,19 @@ eval $(thefuck --alias)
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
 
+### ---- auto completion & suggestions, syntax highlighting --------------------
+source $ZSH/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+source $ZSH/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $ZSH/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
 ### ---- profile mgmt ----------------------------------------------------------
 alias rlp=". ~/.zshrc"
 alias ep1="codium ~/.zshrc"
 alias ep2="codium ~/.bashrc"
 
-### ---- auto completion & suggestions, syntax highlighting --------------------
-source $ZSH/zsh-autocomplete/zsh-autocomplete.plugin.zsh
-source $ZSH/zsh-autosuggestions/zsh-autosuggestions.zsh
-source $ZSH/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+### ---- Shotcuts --------------------------------------------------------------
+alias yay-clean='yay -Scc'
+alias sys-update='sudo pacman -Syyu'
 
 ### ---- Git shortcuts ---------------------------------------------------------
 alias gcl='git clone'
