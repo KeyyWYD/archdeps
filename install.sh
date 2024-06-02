@@ -49,6 +49,7 @@ base_PKGS=(
       'mesa-utils'
       'brightnessctl'
       'xdg-desktop-portal-hyprland'
+      'xdg-user-dirs'
       'hyprland'
       'polkit-gnome'
       'waybar'
@@ -82,6 +83,8 @@ for PKG in "${base_PKGS[@]}"; do
     echo "INSTALLING ${PKG}"
     sudo pacman -S "$PKG" --noconfirm --needed
 done
+
+systemctl --user --now enable pipewire pipewire-pulse pipewire-pulse.socket wireplumber
 
 echo
 echo "Done!"
