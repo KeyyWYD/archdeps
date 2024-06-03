@@ -16,7 +16,17 @@
     "hyprland/workspaces": {
       "on-scroll-up": "hyprctl dispatch workspace e+1",
       "on-scroll-down": "hyprctl dispatch workspace e-1",
-      "format": "{name}",
+      "format": "{icon}",
+      "format-icons": {
+        "1": "",
+        "2": "",
+        "3": "",
+        "4": "",
+        "5": "",
+        "6": "󰙯",
+        "7": "",
+        "8": ""
+      },
       "tooltip": false
     },
 
