@@ -18,8 +18,7 @@
       "on-scroll-down": "hyprctl dispatch workspace e-1",
       "all-outputs": true,
       "on-click": "activate",
-      "format": "{name}",
-      "tooltip": false
+      "format": "{name}"
     },
 
     "custom/separator": {
