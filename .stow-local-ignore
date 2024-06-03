@@ -5,7 +5,7 @@
 \.gitmodules
 \.github
 
-\.install.sh
+\install.sh
 
 ^/README.*
 ^/scrot.*
