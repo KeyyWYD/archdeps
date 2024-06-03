@@ -55,7 +55,7 @@ base_PKGS=(
       'swaybg'
       'playerctl'
       'udiskie'
-      'mako'
+      'swaync'
       'stow'
       'noto-fonts'
       'ttf-nerd-fonts-symbols'
