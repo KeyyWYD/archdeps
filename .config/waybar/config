@@ -6,9 +6,9 @@
     "margin-top": 3,
 
   // MODULES
-    "modules-left": ["custom/menu", "hyprland/workspaces"],
+    "modules-left": ["custom/menu", "hyprland/workspaces", "battery"],
     "modules-center": ["hyprland/window"],
-    "modules-right": ["tray", "cpu", "memory", "wireplumber", "clock"],
+    "modules-right": ["network", "cpu", "memory", "wireplumber", "clock"],
 
   // WORKSPACES
     "hyprland/workspaces": {
@@ -26,6 +26,33 @@
     "on-click": "set $menu dmenu_path | pkill rofi || rofi -show drun | xargs swaymsg exec --",
     "escape": true,
     "tooltip": false
+    },
+
+    "battery": {
+      "format": "{icon}  {capacity}%",
+      "format-alt": "{icon} {time}",
+      "format-charging": "  {capacity}%",
+      "format-icons": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "format-plugged": " {capacity}% ",
+      "states": {
+        "critical": 15,
+        "good": 95,
+        "warning": 30
+      }
+    },
+
+    "network": {
+      "format-disconnected": "󰖪 0% ",
+      "format-ethernet": "󰈀 100% ",
+      "format-linked": "{ifname} (No IP)",
+      "format-wifi": "  {signalStrength}%",
+      "tooltip-format": "Connected to {essid} {ifname} via {gwaddr}"
     },
 
   // CLOCK
