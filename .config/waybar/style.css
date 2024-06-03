@@ -1,43 +1,25 @@
 
-/*-- Catppuccin Mocha --*/
-@define-color rosewater #f5e0dc;
-@define-color flamingo #f2cdcd;
-@define-color pink #f5c2e7;
-@define-color mauve #cba6f7;
-@define-color red #f38ba8;
-@define-color maroon #eba0ac;
-@define-color peach #fab387;
-@define-color yellow #f9e2af;
-@define-color green #a6e3a1;
-@define-color teal #94e2d5;
-@define-color sky #89dceb;
-@define-color sapphire #74c7ec;
-@define-color blue #89b4fa;
-@define-color lavender #b4befe;
-@define-color text #cdd6f4;
-@define-color subtext1 #bac2de;
-@define-color subtext0 #a6adc8;
-@define-color overlay2 #9399b2;
-@define-color overlay1 #7f849c;
-@define-color overlay0 #6c7086;
-@define-color surface2 #585b70;
-@define-color surface1 #45475a;
-@define-color surface0 #313244;
-@define-color base #1e1e2e;
-@define-color mantle #181825;
-@define-color crust #11111b;
+/*-- Catppuccin --*/
+@import "mocha.css";
 
 * {
   border: none;
-  border-radius: 10px;
+  /*border-radius: 10px;*/
   font-family: JetBrainsMono, Symbols Nerd Font;
   font-size: 12px;
   min-height: 0;
 }
 
 window#waybar {
-  background-color: @base;
+  background-color: rgba(0,0,0,0.8);
   color: @base;
+}
+
+tooltip {
+  background: @base;
+  color: @text;
+  border-radius: 10px;
+  border-width: 0px;
 }
 
 #workspaces button {
@@ -77,20 +59,19 @@ window#waybar {
   color: @text;
   padding: 0px 10px;
   margin: 5px 0px;
-
   border-radius: 10px;
 }
 
-#tray {
-  padding: 0px 10px;
-  margin: 5px 5px;
+#battery {
+  padding: 0px 10px 0px 5px;
+  margin: 5px 0px;
   color: @text;
   background: @surface0;
-  border-radius: 10px;
+  border-radius: 0px 10px 10px 0px;
 }
 
 #cpu{
-  padding: 0px 10px;
+  padding: 0px 5px 0px 10px;
   margin: 5px 0px;
   color: @text;
   background: @surface0;
@@ -99,18 +80,25 @@ window#waybar {
 
 #memory{
   padding: 0px 10px 0px 5px;
+  margin: 5px 5px 5px 0px;
+  color: @text;
+  background: @surface0;
+  border-radius: 0px 10px 10px 0px;
+}
+
+#network {
+ padding: 0px 5px 0px 10px;
+ margin: 5px 0px;
+ border-radius: 10px 0px 0px 10px;
+ background: @surface0;
+ color: @text;
+}
+
+#wireplumber {
   margin: 5px 0px;
   color: @text;
   background: @surface0;
   border-radius: 0px;
-}
-
-#wireplumber {
-  padding: 0px 10px 0px 10px;
-  margin: 5px 0px;
-  color: @text;
-  background: @surface0;
-  border-radius: 0px 10px 10px 0px;
 }
 
 #clock {
