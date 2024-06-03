@@ -2,7 +2,7 @@
     "layer": "top",
     //"height": 30,
     //"width": 1366,
-    "mod": "dock",
+    //"mod": "dock",
     "height": 31,
     "exclusive": true,
     "passthrough": false,
@@ -27,6 +27,8 @@
         "7": "",
         "8": ""
       },
+      "active-only": false,
+      "all-outputs": true,
       "tooltip": false
     },
 
