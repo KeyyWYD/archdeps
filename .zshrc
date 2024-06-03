@@ -1,7 +1,7 @@
 export ZSH=$HOME/.zsh
 
 ### ---- load modules ----------------------------------------------------------
-pfetch
+# pfetch
 eval $(thefuck --alias)
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
