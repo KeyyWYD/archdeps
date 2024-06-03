@@ -11,7 +11,7 @@
 }
 
 window#waybar {
-  background-color: rgba(0,0,0,0.8);
+  background-color: rgba(0,0,0,0.5);
   color: @base;
 }
 
@@ -46,20 +46,26 @@ tooltip {
 
 #custom-menu {
   color: @base;
-  background-image: linear-gradient(90deg, @peach 10%, @peach 80%);
-  padding: 0px 10px;
+  /*background-image: linear-gradient(90deg, @peach 10%, @peach 80%);*/
+  padding: 0px 5px;
   margin: 5px 10px;
   border-radius: 10px;
+}
+
+#custom-separator {
+  padding-left: 1em;
+  padding-right: 1em;
+  color: @text;
 }
 
 #window {
   font-weight: bold;
   font-family: "CaskaydiaCove Nerd Font Mono";
-  background: @surface0;
-  color: @text;
-  padding: 0px 10px;
+  /* background: @surface0; */
+  color: @peach;
+  padding: 0px 0px;
   margin: 5px 0px;
-  border-radius: 10px;
+ /* border-radius: 10px; */
 }
 
 #battery {

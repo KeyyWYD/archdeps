@@ -9,24 +9,29 @@
     "gtk-layer-shell": true,
     "reload_style_on_change": true,
 
-    "modules-left": ["custom/menu", "hyprland/workspaces"],
-    "modules-center": ["hyprland/window"],
+    "modules-left": ["custom/menu", "hyprland/workspaces", "custom/separator", "hyprland/window"],
+    "modules-center":[""],
     "modules-right": ["cpu", "memory", "network", "wireplumber", "battery", "clock"],
 
     "hyprland/workspaces": {
-    "on-scroll-up": "hyprctl dispatch workspace e+1",
-    "on-scroll-down": "hyprctl dispatch workspace e-1",
-    "all-outputs": true,
-    "format": "{name}",
-    "tooltip": false
+      "on-scroll-up": "hyprctl dispatch workspace e+1",
+      "on-scroll-down": "hyprctl dispatch workspace e-1",
+      "all-outputs": true,
+      "format": "{name}",
+      "tooltip": false
+    },
+
+    "custom/separator": {
+      "format": "",
+      "tooltip": false
     },
 
     "custom/menu": {
-    "format": "<span color=\"#f5f7fa\">{icon}</span>",
-    "format-icons": {"default": ["󰣇"]},
-    "on-click": "set $menu dmenu_path | pkill rofi || rofi -show drun | xargs swaymsg exec --",
-    "escape": true,
-    "tooltip": false
+      "format": "<span color=\"#f5f7fa\">{icon}</span>",
+      "format-icons": {"default": ["󰣇"]},
+      "on-click": "set $menu dmenu_path | pkill rofi || rofi -show drun | xargs swaymsg exec --",
+      "escape": true,
+      "tooltip": false
     },
 
     "battery": {
@@ -63,6 +68,11 @@
     },
 
     "hyprland/window": {
+      "format": "{}",
+      "rewrite": {
+	"Mozilla Firefox": "Firefox",
+        "(.*) — Mozilla Firefox": "Firefox"
+      },
       "max-length": 48
     },
 
