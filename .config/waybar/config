@@ -1,8 +1,8 @@
 {
     "layer": "top",
-    //"height": 30,
-    //"width": 1366,
-    //"mod": "dock",
+    "height": 30,
+    "width": 1360,
+    "mod": "dock",
     "height": 31,
     "exclusive": true,
     "passthrough": false,
@@ -11,7 +11,7 @@
 
     "modules-left": ["custom/menu", "hyprland/workspaces", "custom/separator", "hyprland/window"],
     "modules-center":[""],
-    "modules-right": ["cpu", "memory", "network", "wireplumber", "battery", "clock"],
+    "modules-right": ["cpu", "memory", "network", "wireplumber", "battery", "custom/notification", "clock"],
 
     "hyprland/workspaces": {
         "disable-scroll": true,
@@ -50,7 +50,7 @@
     "custom/menu": {
       "format": "{icon}",
       "format-icons": {"default": ["󰣇"]},
-      "on-click": "set $menu dmenu_path | pkill rofi || rofi -show drun | xargs swaymsg exec --",
+      "on-click": "env XDG_CURRENT_DESKTOP=GNOME gnome-control-center --verbose",
       "escape": true,
       "tooltip": false
     },
@@ -61,11 +61,10 @@
             "warning": 30,
             "critical": 20
         },
-        "format": "{time} {icon}",
+        "format": "{icon} {capacity}%",
         "rotate": 0,
         "format-charging": " {capacity}%",
         "format-plugged": " {capacity}%",
-        "format-alt": "{icon} {capacity}%",
         "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
     },
 
@@ -91,9 +90,10 @@
     "hyprland/window": {
       "format": "{}",
       "rewrite": {
-	"(.*) - Discord": "Discord",
- 	"Mozilla Firefox": "Firefox",
-        "(.*) — Mozilla Firefox": "Firefox"
+	      "(.*) - Discord": "Discord",
+ 	      "Mozilla Firefox": "Firefox",
+        "(.*) — Mozilla Firefox": "Firefox",
+	      "class<Spotify>": "Spotify"
       },
       "max-length": 48
     },
@@ -121,11 +121,33 @@
     },
 
     "cpu": {
-    "format": " {usage}%",
-    "tooltip": false
+      "format": " {usage}%",
+      "tooltip": false
     },
 
     "memory": {
-    "format": " {}%"
+      "format": " {}%"
     }
+/*
+    "custom/notification": {
+      "tooltip": false,
+      "format": "{icon}",
+      "format-icons": {
+      "notification": "󱅫 ",
+      "none": "󰂚 ",
+      "dnd-notification": "󰵙 ",
+      "dnd-none": "󰂛 ",
+      "inhibited-notification": "󱅫 ",
+      "inhibited-none": "󰂚 ",
+      "dnd-inhibited-notification": "󰵙 ",
+      "dnd-inhibited-none": "󰂛​ "
+     },
+      "return-type": "json",
+      "exec-if": "which swaync-client",
+      "exec": "swaync-client -swb",
+      "on-click": "swaync-client -t -sw",
+      "on-click-right": "swaync-client -d -sw",
+      "escape": true
+    }
+    */
   }

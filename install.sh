@@ -51,18 +51,27 @@ base_PKGS=(
       'xdg-user-dirs'
       'hyprland'
       'polkit-gnome'
+      'gnome-control-center'
       'waybar'
       'playerctl'
       'udiskie'
       'swaybg'
-      'swaync'
+      'dunst'
       'stow'
+
+      # Fonts ---------------------------------------------------------------
+
       'noto-fonts'
       'ttf-nerd-fonts-symbols'
+      'ttf-nerd-fonts-symbols-common'
       'ttf-cascadia-code-nerd'
       'ttf-jetbrains-mono-nerd'
       'ttf-firacode-nerd'
       'ttf-mononoki-nerd'
+      'ttf-dejavu'
+      'ttf-fira-code'
+      'ttf-firacode-nerd'
+      'ttf-font-awesome'
 
       # DEVELOPMENT ---------------------------------------------------------
 
@@ -70,7 +79,7 @@ base_PKGS=(
       'github-cli'
       'cmake'
       'gcc'
-
+      
       # MULTIMEDIA ----------------------------------------------------------
 
       'firefox'

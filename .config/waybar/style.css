@@ -4,7 +4,7 @@
 
 * {
   border: none;
-  /*border-radius: 10px;*/
+  border-radius: 10px;
   font-family: JetBrainsMono, Symbols Nerd Font;
   font-size: 12px;
   min-height: 0;
@@ -62,11 +62,11 @@ tooltip {
 }
 
 #custom-menu {
-  color: @fgcol;
+  font-weight: bold;
+  color: @blue;
   /*background-image: linear-gradient(90deg, @peach 10%, @peach 80%);*/
-  padding: 0px 5px;
+  padding: 0px 3px;
   margin: 5px 10px;
-  border-radius: 10px;
 }
 
 #custom-separator {
@@ -84,6 +84,16 @@ tooltip {
   margin: 5px 0px;
  /* border-radius: 10px; */
 }
+
+/*
+#custom-notification {
+  padding: 0px 10px 0px 5px;
+  margin: 5px 0px;
+  color: @fgcol;
+  background: @bgcol;
+  border-radius: 0px 10px 10px 0px;
+}
+*/
 
 #battery {
   padding: 0px 10px 0px 5px;
