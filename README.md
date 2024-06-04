@@ -2,6 +2,8 @@
 
 ## Dependencies
 
+ - eww
+ 
 Dependencies can be installed using `install.sh` (see "Install" section)
 
 ## Install
