@@ -1,0 +1,17 @@
+/*
+---
+name: 'Everforest Dark Hard'
+source: https://github.com/Gogh-Co/Gogh/blob/master/themes/Everforest%20Dark%20Hard.yml
+*/
+
+@define-color black #2E383C;
+@define-color red #E67E80;
+@define-color green #A7C080;
+@define-color yellow #DBBC7F;
+@define-color blue #7FBBB3;
+@define-color magenta #D699B6;
+@define-color cyan #83C092;
+@define-color white #D3C6AA;
+
+@define-color bgcol #272E33;
+@define-color fgcol #D3C6AA;

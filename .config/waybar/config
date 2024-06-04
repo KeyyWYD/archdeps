@@ -21,24 +21,24 @@
         "format-icons": {
          "1": "",
          "2": "",
-	 "3": " "
+	 "3": "",
          "4": "",
-         "5": " ",
+         "5": "",
          "6": "󰙯",
 	 "7": "",
          "urgent": "",
          "focused": "",
          "default": ""
-     },
+        },
 
-     "persistent-workspaces":{
+        "persistent-workspaces":{
          "1": "",
          "2": "",
-	 "3": " "
+	 "3": "",
          "4": "",
-         "5": " ",
+         "5": "",
          "6": "󰙯",
-	 "7": "",
+	 "7": ""
       }
     },
 
@@ -48,7 +48,7 @@
     },
 
     "custom/menu": {
-      "format": "<span color=\"#ffffff\">{icon}</span>",
+      "format": "{icon}",
       "format-icons": {"default": ["󰣇"]},
       "on-click": "set $menu dmenu_path | pkill rofi || rofi -show drun | xargs swaymsg exec --",
       "escape": true,
@@ -91,7 +91,8 @@
     "hyprland/window": {
       "format": "{}",
       "rewrite": {
-	"Mozilla Firefox": "Firefox",
+	"(.*) - Discord": "Discord",
+ 	"Mozilla Firefox": "Firefox",
         "(.*) — Mozilla Firefox": "Firefox"
       },
       "max-length": 48

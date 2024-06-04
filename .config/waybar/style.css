@@ -1,6 +1,6 @@
 
 /*-- Catppuccin --*/
-@import "mocha.css";
+@import "themes/everforest.css";
 
 * {
   border: none;
@@ -16,28 +16,45 @@ window#waybar {
 }
 
 tooltip {
-  background: @base;
-  color: @text;
+  background: @bgcol;
+  color: @fgcol;
   border-radius: 10px;
   border-width: 0px;
 }
 
-#workspaces button {
-  /*background: @mantle;*/
-  color: @text;
+
+#workspaces {
+  background: @bgcol;
+  margin: 5px 0px;
   padding: 0px 10px;
-  margin: 5px 2px;
- /* border-radius: 10px;*/
+  margin: 5px 0px;
+  border-radius: 15px;
+  opacity: 0.8;
+  font-size: 16px;
+  color: @fgcol;
 }
 
-#workspaces button.active{
-  background: @surface1;
-  color: @maroon;
+#workspaces button {
+  padding: 0px 1px;
+  margin: 3px 1px;
+  border-radius: 10px;
+  color: @fgcol;
+  transition: all 0.2s ease-in-out;
+}
+
+#workspaces button.active {
+  color: @bgcol;
+  background: @green;
+  border-radius: 10px;
+  min-width: 30px;
+  padding: 0px;
+  transition: all 0.2s ease-in-out;
+  opacity: 1;
 }
 
 #workspaces button.focused {
-  background: @base;
-  color: @text;
+  background: @bgcol;
+  color: @fgcol;
 }
 
 #workspaces button.urgent {
@@ -45,7 +62,7 @@ tooltip {
 }
 
 #custom-menu {
-  /*color: @base;*/
+  color: @fgcol;
   /*background-image: linear-gradient(90deg, @peach 10%, @peach 80%);*/
   padding: 0px 5px;
   margin: 5px 10px;
@@ -55,14 +72,14 @@ tooltip {
 #custom-separator {
   padding-left: 1em;
   padding-right: 1em;
-  color: @text;
+  color: @fgcol;
 }
 
 #window {
   font-weight: bold;
   font-family: "CaskaydiaCove Nerd Font Mono";
   /* background: @surface0; */
-  color: @peach;
+  color: @yellow;
   padding: 0px 0px;
   margin: 5px 0px;
  /* border-radius: 10px; */
@@ -71,24 +88,24 @@ tooltip {
 #battery {
   padding: 0px 10px 0px 5px;
   margin: 5px 0px;
-  color: @text;
-  background: @surface0;
+  color: @fgcol;
+  background: @bgcol;
   border-radius: 0px 10px 10px 0px;
 }
 
 #cpu{
   padding: 0px 5px 0px 10px;
   margin: 5px 0px;
-  color: @text;
-  background: @surface0;
+  color: @fgcol;
+  background: @bgcol;
   border-radius: 10px 0px 0px 10px;
 }
 
 #memory{
   padding: 0px 10px 0px 5px;
   margin: 5px 5px 5px 0px;
-  color: @text;
-  background: @surface0;
+  color: @fgcol;
+  background: @bgcol;
   border-radius: 0px 10px 10px 0px;
 }
 
@@ -96,20 +113,20 @@ tooltip {
  padding: 0px 5px 0px 10px;
  margin: 5px 0px;
  border-radius: 10px 0px 0px 10px;
- background: @surface0;
- color: @text;
+ background: @bgcol;
+ color: @fgcol;
 }
 
 #wireplumber {
   margin: 5px 0px;
-  color: @text;
-  background: @surface0;
+  color: @fgcol;
+  background: @bgcol;
   border-radius: 0px;
 }
 
 #clock {
-  color: @base;
-  background-image: linear-gradient(90deg, @peach 10%, @peach 80%);
+  color: @bgcol;
+  background-image: linear-gradient(90deg, @yellow 10%, @yellow 80%);
   padding: 0px 10px;
   margin: 5px 10px;
   border-radius: 10px;
