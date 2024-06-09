@@ -1,0 +1,202 @@
+{
+  // open json editor for settings
+  "workbench.settings.editor": "json",
+
+  // Security
+  "security.workspace.trust.enabled": false,
+  "security.workspace.trust.untrustedFiles": "open",
+  "security.workspace.trust.emptyWindow": true,
+  "security.workspace.trust.banner": "never",
+
+  // Fonts
+  "editor.fontFamily": "CaskaydiaCove Nerd Font Mono",
+  "scm.inputFontFamily": "CaskaydiaCove Nerd Font Mono",
+  "terminal.integrated.fontFamily": "JetBrainsMonoNL Nerd Font Mono",
+  "chat.editor.fontFamily": "CaskaydiaCove Nerd Font Mono",
+  "debug.console.fontFamily": "JetBrainsMonoNL Nerd Font Mono",
+  "editor.codeLensFontFamily": "CaskaydiaCove Nerd Font Mono",
+  "notebook.output.fontFamily": "CaskaydiaCove Nerd Font Mono",
+  "markdown.preview.fontFamily": "CaskaydiaCove Nerd Font Mono",
+  "editor.inlayHints.fontFamily": "CaskaydiaCove Nerd Font Mono",
+
+  // Font size
+  "editor.fontSize": 13.5,
+  "terminal.integrated.fontSize": 13.5,
+  "editor.fontLigatures": true,
+
+  // APC
+  "window.titleBarStyle": "native",
+  "apc.menubar.compact": true,
+  "apc.header": {
+    "height": 28,
+    "fontSize": 12
+  },
+
+  "apc.sidebar.titlebar": {
+    "height": 28
+  },
+
+  "apc.activityBar": {
+    "size": 35,
+    "itemSize": 35,
+    "itemMargin": 0
+  },
+
+  "apc.electron": {
+    "frame": false,
+    "titleBarStyle": "hiddenInset",
+    "opacity": 0.85
+  },
+
+  "apc.font.family": "JetBrainsMonoNL Nerd Font Mono",
+  "apc.monospace.font.family": "JetBrainsMonoNL Nerd Font Mono",
+  "apc.statusBar": {
+    "position": "editor-bottom",
+    "height": 30,
+    "fontSize": 11
+  },
+
+  "apc.listRow": {
+    "lists": [
+      "explorer-folders-view",
+      "quick-input-list",
+      "results"
+    ],
+    "height": 19,
+    "fontSize": 12
+  },
+
+  "apc.stylesheet": {
+    // ".editor-actions": "margin: auto 140px auto 0;background: #ffffff0f; height: 26px !important; border-radius: 4px; padding: 0 0 0 4px !important",
+    "div.tab[aria-selected='true'] > .tab-border-top-container": "display: block !important; height: 2.5px; width: 100%; position: absolute; left: 0; background: linear-gradient(to right, #06f, #0af); box-shadow: 0 2px 10px #08f; z-index: 10",
+    ".tabs-border-bottom::after": "background: transparent !important",
+    ".monaco-workbench .part.statusbar>.items-container>.statusbar-item.remote-kind": "background: transparent; color: #a7b0f3",
+    ".inline-title-bar:not(.horizontal-activitybar) .monaco-workbench:not(.fullscreen) .activitybar:not(.right) .content": "height: 100% !important; transform: none !important",
+    ".inline-title-bar:not(.horizontal-activitybar) .monaco-workbench div.activitybar.bordered.left .content": "border-right: 1px solid #0003 !important",
+    ".monaco-workbench .activitybar > .content :not(.monaco-menu) > .monaco-action-bar .action-item.checked .active-item-indicator:before": "border: none !important; width: 2.5px; background: linear-gradient(to top, #06f, #0af); box-shadow: 5px 0 15px #08f",
+    ".custom-activitybar:not(.horizontal-activitybar) div.monaco-workbench div.activitybar>div.content div.monaco-action-bar ul.actions-container li.action-item": "margin-top: 0 !important",
+
+    // moonlight theme text glow, uncomment to add shadow on more tokens text.
+
+    // ".mtk1": "text-shadow: 0 0 8px #fff, 0 0 2px black;",
+    // ".mtk3": "text-shadow: 0 0 8px #555, 0 0 2px black;",
+    // ".mtk4": "text-shadow: 0 0 8px #df0c, 0 0 3px black;",
+    // ".mtk8": "text-shadow: 0 0 8px #a8f, 0 0 3px black;",
+    // ".mtk9": "text-shadow: 0 0 8px #6cf, 0 0 3px black;",
+    // ".mtk10": "text-shadow: 0 0 8px #f66, 0 0 3px black;",
+    // ".mtk11": "text-shadow: 0 0 8px #2f36ff, 0 0 5px #9d91ff80, 0 0 3px black;",
+    // ".mtk12": "text-shadow: 0 0 8px #12baff, 0 0 3px black;",
+    // ".mtk13": "text-shadow: 0 0 8px #ff6080, 0 0 3px black;",
+    // ".mtk14": "text-shadow: 0 0 8px #f85, 0 0 3px black;",
+    // ".mtk16": "text-shadow: 0 0 8px #6f0, 0 0 3px black;",
+    // ".mtk18": "text-shadow: 0 0 8px #879, 0 0 2px black;",
+    // ".mtk22": "text-shadow: 0 0 8px #fff, 0 0 2px black;",
+  },
+
+  // Editor
+  "editor.minimap.enabled": false,
+  "editor.overviewRulerBorder": false,
+  "editor.scrollbar.vertical": "auto",
+  "editor.scrollbar.horizontal": "auto",
+  "editor.scrollbar.horizontalScrollbarSize": 10,
+  "editor.scrollbar.verticalScrollbarSize": 10,
+  "editor.cursorSmoothCaretAnimation": "on",
+  "editor.semanticHighlighting.enabled": true,
+  "editor.formatOnSave": false,
+  "editor.lineNumbers": "on",
+  "editor.wordWrap": "off",
+  "editor.cursorBlinking": "expand",
+  "editor.find.cursorMoveOnType": false,
+  "editor.bracketPairColorization.enabled": true,
+  "editor.guides.bracketPairs": true,
+  "editor.tabSize": 2,
+  //"editor.lineHeight": 1.75,
+  "editor.linkedEditing": true,
+  "editor.accessibilitySupport": "off",
+  //"breadcrumbs.filePath": "off",
+  "breadcrumbs.enabled": false,
+  "workbench.sideBar.location": "right",
+  "workbench.layoutControl.enabled": false,
+  "workbench.statusBar.visible": true,
+  "everforest.lightContrast": "hard",
+  "workbench.iconTheme": "catppuccin-mocha",
+  "catppuccin.accentColor": "pink",
+  "catppuccin.customUIColors": {
+    "mocha": {
+      "statusBar.foreground": "peach",
+      "statusBarItem.remoteBackground":"maroon"
+    },
+  },
+
+  // Terminal
+  "terminal.integrated.env.windows": {},
+  "terminal.integrated.enableMultiLinePasteWarning": "never",
+  "terminal.integrated.minimumContrastRatio": 1,
+  "powershell.integratedConsole.showOnStartup": false,
+  "powershell.integratedConsole.focusConsoleOnExecute": false,
+
+  // Window
+  "window.menuBarVisibility": "compact",
+  "window.zoomLevel": 0.5,
+  "window.commandCenter": false,
+
+  "explorer.compactFolders": false,
+
+  "files.trimTrailingWhitespace": true,
+  "[markdown]": {
+    "files.trimTrailingWhitespace": false
+  },
+
+  "cmake.options.advanced": {
+    "build": {
+      "statusBarVisibility": "inherit",
+      "inheritDefault": "visible"
+    },
+    "launch": {
+      "statusBarVisibility": "inherit",
+      "inheritDefault": "visible"
+    },
+    "debug": {
+      "statusBarVisibility": "inherit",
+      "inheritDefault": "visible"
+    }
+  },
+
+  // Toggle excluded files
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "**/Thumbs.db": true,
+    "**/node_modules": true,
+    "**/.next": true,
+    "**/.husky": true,
+    "**/drizzle": true,
+    "**/dist": true,
+    "**/.todo.md": true,
+    "**/.vscode": true,
+    "**/.eslintrc.cjs": true,
+    "**/.editorconfig": true,
+    "**/.gitignore": true,
+    "**/.lintstagedrc.mjs": true,
+    "**/.markdownlint.json": true,
+    "**/.markdownlintignore": true,
+    "**/.prettierignore": true,
+    "**/bun.lockb": true,
+    "**/cspell.json": true,
+    "**/package-lock.json": true,
+    "**/pnpm-lock.yaml": true,
+    "**/next-env.d.ts": true,
+    "**/postcss.config.cjs": true,
+    "**/prettier.config.js": true,
+    "**/README.md": true,
+    "**/next.config.js": true,
+    "**/tailwind.config.ts": true,
+    "**/drizzle.config.ts": true,
+    "**/migrate.ts": true,
+    "**/.env.example": true
+  },
+  "workbench.colorTheme": "Catppuccin Mocha"
+}
