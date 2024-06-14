@@ -16,15 +16,15 @@ base_PKGS=(
       'zsh'
       'thefuck'
       'zoxide'
-      'starship'
+      # 'starship'
 
       # NETWORK UTILITIES ---------------------------------------------------
 
-      'wpa_supplicant'
-      'dialog'
+       # 'wpa_supplicant'
+       # 'dialog'
       'networkmanager'
       'network-manager-applet'
-      'libsecret'
+       # 'libsecret'
       'ldns'
 
       # AUDIO UTILITIES -----------------------------------------------------
@@ -34,7 +34,7 @@ base_PKGS=(
       'pipewire'
       'pipewire-alsa'
       'pipewire-pulse'
-      'pipewire-jack'
+       # 'pipewire-jack'
       'wireplumber'
       'pavucontrol'
       'volumeicon'
@@ -51,12 +51,12 @@ base_PKGS=(
       'xdg-user-dirs'
       'hyprland'
       'polkit-gnome'
-      'gnome-control-center'
+       # 'gnome-control-center'
       'waybar'
-      'playerctl'
-      'udiskie'
+       # 'playerctl'
+       # 'udiskie'
       'swaybg'
-      'dunst'
+       # 'dunst'
       'stow'
 
       # Fonts ---------------------------------------------------------------
@@ -66,7 +66,6 @@ base_PKGS=(
       'ttf-nerd-fonts-symbols-common'
       'ttf-cascadia-code-nerd'
       'ttf-jetbrains-mono-nerd'
-      'ttf-firacode-nerd'
       'ttf-mononoki-nerd'
       'ttf-dejavu'
       'ttf-fira-code'
@@ -78,7 +77,7 @@ base_PKGS=(
       'git'
       'github-cli'
       'cmake'
-      'gcc'
+       # 'gcc'
       
       # MULTIMEDIA ----------------------------------------------------------
 
