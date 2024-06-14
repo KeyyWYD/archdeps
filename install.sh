@@ -12,8 +12,8 @@ base_PKGS=(
       # TERMINAL UTILITIES --------------------------------------------------
 
       'alacritty'
-      'bash-completion'
       'zsh'
+      'fzf'
       'thefuck'
       'zoxide'
       # 'starship'
