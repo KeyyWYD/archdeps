@@ -14,6 +14,7 @@ base_PKGS=(
       'alacritty'
       'zsh'
       'fzf'
+      'fd'
       'thefuck'
       'zoxide'
       # 'starship'
@@ -36,8 +37,8 @@ base_PKGS=(
       'pipewire-pulse'
        # 'pipewire-jack'
       'wireplumber'
-      'pavucontrol'
-      'volumeicon'
+       # 'pavucontrol'
+       # 'volumeicon'
 
       # POWER MGMT ----------------------------------------------------------
 
@@ -46,15 +47,21 @@ base_PKGS=(
       # GENERAL UTILITIES ---------------------------------------------------
 
       'mesa-utils'
+      'aylurs-gtk-shell'
       'brightnessctl'
-      'xdg-desktop-portal-hyprland'
+       # 'xdg-desktop-portal-hyprland'
       'xdg-user-dirs'
       'hyprland'
-      'polkit-gnome'
+       # 'polkit-gnome'
        # 'gnome-control-center'
-      'waybar'
+      'wayshot'
+       # 'waybar'
+      'wl-clipboard'
+      'wf-recorder'
+      'matugen'
        # 'playerctl'
        # 'udiskie'
+      'swappy'
       'swaybg'
        # 'dunst'
       'stow'
@@ -73,8 +80,7 @@ base_PKGS=(
       'ttf-font-awesome'
 
       # DEVELOPMENT ---------------------------------------------------------
-
-      'git'
+      
       'github-cli'
       'cmake'
        # 'gcc'
