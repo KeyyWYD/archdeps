@@ -23,8 +23,8 @@ base_PKGS=(
 
        # 'wpa_supplicant'
        # 'dialog'
-      'networkmanager'
-      'network-manager-applet'
+       # 'networkmanager'
+       # 'network-manager-applet'
        # 'libsecret'
       'ldns'
 
