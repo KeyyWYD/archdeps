@@ -20,7 +20,7 @@ sudo pacman -Syu
 
 cat << "EOF"
 
-              ┳      ┓┓•    
+              ┳      ┓┓•
               ┃┏┓┏╋┏┓┃┃┓┏┓┏┓
               ┻┛┗┛┗┗┻┗┗┗┛┗┗┫
                            ┛ NECESSARY COMPONENTS
@@ -108,6 +108,7 @@ base_PKGS=(
 )
 
 yay_PKGS=(
+    'auto-cpufreq'
     'matugen-bin'
     'sddm-git'
     'wayshot-git'
@@ -123,21 +124,22 @@ for yPKG in "${yay_PKGS[@]}"; do
     yay -S "$yPKG"
 done
 
+sudo auto-cpufreq --install
 systemctl --user --now enable pipewire pipewire-pulse pipewire-pulse.socket wireplumber
-systemctl enable sddm
+systemctl enable auto-cpufreq sddm
 
 cat << "EOF"
 
-              ▓█████▄  ▒█████   ███▄    █ ▓█████ 
-              ▒██▀ ██▌▒██▒  ██▒ ██ ▀█   █ ▓█   ▀ 
-              ░██   █▌▒██░  ██▒▓██  ▀█ ██▒▒███   
-              ░▓█▄   ▌▒██   ██░▓██▒  ▐▌██▒▒▓█  ▄ 
+              ▓█████▄  ▒█████   ███▄    █ ▓█████
+              ▒██▀ ██▌▒██▒  ██▒ ██ ▀█   █ ▓█   ▀
+              ░██   █▌▒██░  ██▒▓██  ▀█ ██▒▒███
+              ░▓█▄   ▌▒██   ██░▓██▒  ▐▌██▒▒▓█  ▄
               ░▒████▓ ░ ████▓▒░▒██░   ▓██░░▒████▒
                ▒▒▓  ▒ ░ ▒░▒░▒░ ░ ▒░   ▒ ▒ ░░ ▒░ ░
                ░ ▒  ▒   ░ ▒ ▒░ ░ ░░   ░ ▒░ ░ ░  ░
-               ░ ░  ░ ░ ░ ░ ▒     ░   ░ ░    ░   
+               ░ ░  ░ ░ ░ ░ ▒     ░   ░ ░    ░
                  ░        ░ ░           ░    ░  ░
-               ░                                 
+               ░
               ----- Restart to apply changes -----
 
 EOF
