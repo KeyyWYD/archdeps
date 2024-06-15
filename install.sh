@@ -1,44 +1,52 @@
 #!/usr/bin/env bash
 #-------------------------------------------------------------------------
-#  Arch Linux Post Install Setup and Config
+#  Arch Linux Post Install ( Hyprland )
 #-------------------------------------------------------------------------
 
-echo
-echo "INSTALLING NECESSARY COMPONENTS"
-echo
+sudo pacman -Syu
+
+echo '  _____    __  __  _____  _      __    __   _____    __  ___ '
+echo '  \_   \/\ \ \/ _\/__   \/_\    / /   / /   \_   \/\ \ \/ _ \'
+echo '   / /\/  \/ /\ \   / /\//_\\\  / /   / /     / /\/  \/ / /_\/'
+echo '/\/ /_/ /\  / _\ \ / / /  _  \/ /___/ /___/\/ /_/ /\  / /_\\ '
+echo '\____/\_\ \/  \__/ \/  \_/ \_/\____/\____/\____/\_\ \/____/ '
+echo NECESSARY COMPONENTS
+
+echo Installing yay . . .
+
+mkdir -p "$HOME"/tmp/
+cd "$HOME"/tmp/
+git clone 'https://aur.archlinux.org/yay.git'
+cd yay && makepkg -si
+cd "$HOME"
+rm -rf tmp/yay
+yay --version
+
 
 base_PKGS=(
 
       # TERMINAL UTILITIES --------------------------------------------------
 
-      'alacritty'
-      'zsh'
-      'fzf'
-      'fd'
-      'thefuck'
-      'zoxide'
-      # 'starship'
+       'alacritty'
+       'fd'
+       'fzf'
+       'thefuck'
+       'zoxide'
+       'zsh'
 
       # NETWORK UTILITIES ---------------------------------------------------
 
-       # 'wpa_supplicant'
-       # 'dialog'
-       # 'networkmanager'
-       # 'network-manager-applet'
-       # 'libsecret'
       'ldns'
 
       # AUDIO UTILITIES -----------------------------------------------------
 
       'alsa-utils'
       'alsa-plugins'
+      'pavucontrol'
       'pipewire'
       'pipewire-alsa'
       'pipewire-pulse'
-       # 'pipewire-jack'
       'wireplumber'
-       # 'pavucontrol'
-       # 'volumeicon'
 
       # POWER MGMT ----------------------------------------------------------
 
@@ -52,53 +60,71 @@ base_PKGS=(
       'xdg-user-dirs'
       'hyprland'
       'polkit-kde-agent'
-       # 'gnome-control-center'
+      'rofi-wayland'
+      'swappy'
+      'swaync'
+      'swaybg'
+      'stow'
       'wayshot'
       'waybar'
       'wl-clipboard'
       'wf-recorder'
-      'matugen'
-       # 'playerctl'
-       # 'udiskie'
-      'swappy'
-      'swaync'
-      'swaybg'
-       # 'dunst'
-      'stow'
 
       # Fonts ---------------------------------------------------------------
 
-      'noto-fonts'
-      'ttf-nerd-fonts-symbols'
-      'ttf-nerd-fonts-symbols-common'
-      'ttf-cascadia-code-nerd'
-      'ttf-jetbrains-mono-nerd'
-      'ttf-mononoki-nerd'
-      'ttf-dejavu'
-      'ttf-fira-code'
-      'ttf-firacode-nerd'
-      'ttf-font-awesome'
+       'noto-fonts'
+       'ttf-nerd-fonts-symbols'
+       'ttf-nerd-fonts-symbols-common'
+       'ttf-cascadia-code-nerd'
+       'ttf-jetbrains-mono-nerd'
+       'ttf-mononoki-nerd'
+       'ttf-dejavu'
+       'ttf-fira-code'
+       'ttf-firacode-nerd'
+       'ttf-font-awesome'
 
       # DEVELOPMENT ---------------------------------------------------------
-      
-      'github-cli'
-      'cmake'
-       # 'gcc'
-      
+
+       'github-cli'
+       'cmake'
+
       # MULTIMEDIA ----------------------------------------------------------
 
-      'firefox'
-      'discord'
-      'spotify-launcher'
+       'firefox'
+       'discord'
+       'spotify-launcher'
 )
 
-for PKG in "${base_PKGS[@]}"; do
-    echo "INSTALLING ${PKG}"
-    sudo pacman -S "$PKG" --noconfirm --needed
+yay_PKGS=(
+    'matugen-bin'
+    'sddm-git'
+)
+
+for pPKG in "${base_PKGS[@]}"; do
+    echo "INSTALLING ${pPKG}"
+    sudo pacman -S "$pPKG" --noconfirm --needed
+done
+
+for yPKG in "${yay_PKGS[@]}"; do
+    echo "INSTALLING ${yPKG}"
+    yay -S "$yPKG"
 done
 
 systemctl --user --now enable pipewire pipewire-pulse pipewire-pulse.socket wireplumber
 
 echo
-echo "Done!"
 echo
+echo '▓█████▄  ▒█████   ███▄    █ ▓█████ '
+echo '▒██▀ ██▌▒██▒  ██▒ ██ ▀█   █ ▓█   ▀ '
+echo '░██   █▌▒██░  ██▒▓██  ▀█ ██▒▒███   '
+echo '░▓█▄   ▌▒██   ██░▓██▒  ▐▌██▒▒▓█  ▄ '
+echo '░▒████▓ ░ ████▓▒░▒██░   ▓██░░▒████▒'
+echo ' ▒▒▓  ▒ ░ ▒░▒░▒░ ░ ▒░   ▒ ▒ ░░ ▒░ ░'
+echo ' ░ ▒  ▒   ░ ▒ ▒░ ░ ░░   ░ ▒░ ░ ░  ░'
+echo ' ░ ░  ░ ░ ░ ░ ▒     ░   ░ ░    ░   '
+echo '   ░        ░ ░           ░    ░  ░'
+echo ' ░                                 '
+echo '---- Restart to apply changes -----'
+
+
+
