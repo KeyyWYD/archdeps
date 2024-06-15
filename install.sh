@@ -1,18 +1,23 @@
 #!/usr/bin/env bash
 
 cat << "EOF"
-                                     ,
-              ,-.       _,---._ __  / \
-             /  )    .-'       `./ /   \
-            (  (   ,'            `/    /|
-             \  `-"             \'\   / |
-              `.              ,  \ \ /  |
-               /`.          ,'-`----Y   |
-              (            ;        |   '
-              |  ,-.    ,-'         |  /
-              |  | (   |            | /
-              )  |  \  `.___________|/
-              `--'   `--'
+                                                  ,
+                .          ,-.       _,---._ __  / \
+               / \        /  )    .-'       `./ /   \
+              /   \      (  (   ,'            `/    /|
+             /     \      \  `-"             \'\   / |
+            /.      \      `.              ,  \ \ /  |
+           ,_ `.     \      /`.          ,'-`----Y   |
+          /   ``-     .    (            ;        |   '
+         /             `   |  ,-.    ,-'         |  /
+        /               `. |  | (   |            | /
+      .`      ."`".       \   |  \  `.___________|/
+     .       '     \       \ -'   `--'
+    /        \      ;     -.\
+   /        .'     /._     `".
+  /   .-"`             `"-.   `.
+.`.-`                       `-._\
+`                               `
 
 EOF
 
@@ -25,7 +30,7 @@ cat << "EOF"
               ┻┛┗┛┗┗┻┗┗┗┛┗┗┫
                            ┛ NECESSARY COMPONENTS
 
-INSTALLING yay ...
+INSTALLING yay
 EOF
 
 mkdir -p "$HOME"/tmp/
@@ -49,38 +54,38 @@ base_PKGS=(
 
       # NETWORK UTILITIES ---------------------------------------------------
 
-      'ldns'
+       'ldns'
 
       # AUDIO UTILITIES -----------------------------------------------------
 
-      'alsa-utils'
-      'alsa-plugins'
-      'pavucontrol'
-      'pipewire'
-      'pipewire-alsa'
-      'pipewire-pulse'
-      'wireplumber'
+       'alsa-utils'
+       'alsa-plugins'
+       'pavucontrol'
+       'pipewire'
+       'pipewire-alsa'
+       'pipewire-pulse'
+       'wireplumber'
 
       # POWER MGMT ----------------------------------------------------------
 
-      'thermald'
+       'thermald'
 
       # GENERAL UTILITIES ---------------------------------------------------
 
-      'mesa-utils'
-      'brightnessctl'
-      'xdg-desktop-portal-hyprland'
-      'xdg-user-dirs'
-      'hyprland'
-      'polkit-kde-agent'
-      'rofi-wayland'
-      'swappy'
-      'swaync'
-      'swaybg'
-      'stow'
-      'waybar'
-      'wl-clipboard'
-      'wf-recorder'
+       'mesa-utils'
+       'brightnessctl'
+       'xdg-desktop-portal-hyprland'
+       'xdg-user-dirs'
+       'hyprland'
+       'polkit-kde-agent'
+       'rofi-wayland'
+       'swappy'
+       'swaync'
+       'swaybg'
+       'stow'
+       'waybar'
+       'wl-clipboard'
+       'wf-recorder'
 
       # Fonts ---------------------------------------------------------------
 
@@ -115,11 +120,13 @@ yay_PKGS=(
 )
 
 for pPKG in "${base_PKGS[@]}"; do
+    echo
     echo "INSTALLING ${pPKG}"
     sudo pacman -S "$pPKG" --noconfirm --needed
 done
 
 for yPKG in "${yay_PKGS[@]}"; do
+    echo
     echo "INSTALLING ${yPKG}"
     yay -S "$yPKG"
 done
