@@ -1,9 +1,206 @@
+	/*---------- Rofi Config ----------*/
+
 configuration {
-  display-drun: "Applications:";
-  display-window: "Windows:";
-  drun-display-format: "{name}";
-  font: "JetBrainsMono Nerd Font Medium 10";
-  modi: "drun";
+	/*---------- General setting ----------*/
+	modi: "drun";
+	case-sensitive: false;
+	cycle: true;
+	filter: "";
+	scroll-method: 0;
+	normalize-match: true;
+	show-icons: true;
+	steal-focus: false;
+
+	/*---------- Matching setting ----------*/
+	matching: "normal";
+	tokenize: true;
+
+	/*---------- SSH settings ----------*/
+	ssh-client: "ssh";
+	ssh-command: "{terminal} -e {ssh-client} {host} [-p {port}]";
+	parse-hosts: true;
+	parse-known-hosts: true;
+
+	/*---------- Drun settings ----------*/
+	drun-categories: "";
+	drun-match-fields: "name,generic,exec,categories,keywords";
+	drun-display-format: "{icon} {name}";
+	drun-show-actions: false;
+	drun-url-launcher: "xdg-open";
+	drun-use-desktop-cache: false;
+	drun-reload-desktop-cache: false;
+	drun {
+		/** Parse user desktop files. */
+		parse-user:   true;
+		/** Parse system desktop files. */
+		parse-system: true;
+    }
+
+	/*---------- Run settings ----------*/
+	run-command: "{cmd}";
+	run-list-command: "";
+	run-shell-command: "{terminal} -e {cmd}";
+
+	/*---------- Fallback Icon ----------*/
+	run,drun {
+		fallback-icon: "application-x-addon";
+	}
+
+	/*---------- Window switcher settings ----------*/
+	window-match-fields: "title,class,role,name,desktop";
+	window-command: "wmctrl -i -R {window}";
+	window-format: "{w} - {c} - {t:0}";
+	window-thumbnail: false;
+
+	/*---------- History and Sorting ----------*/
+	disable-history: false;
+	sorting-method: "normal";
+	max-history-size: 25;
+
+	/*---------- Display setting ----------*/
+	display-window: "Windows";
+	display-windowcd: "Window CD";
+	display-run: "Run";
+	display-ssh: "SSH";
+	display-drun: "Applications:";
+	display-combi: "Combi";
+	display-keys: "Keys";
+	display-filebrowser: "Files";
+
+	/*---------- Misc setting ----------*/
+	terminal: "alacritty";
+	font: "JetBrainsMono Nerd Font Medium 10";
+	sort: false;
+	threads: 0;
+	click-to-exit: true;
+
+	/*---------- File browser settings ----------*/
+    filebrowser {
+      directories-first: true;
+      sorting-method:    "name";
+    }
+
+	/*---------- Other settings ----------*/
+    timeout {
+      action: "kb-cancel";
+      delay:  0;
+    }
+
 }
 
-@theme "./themes/rounded-everforest-dark.rasi"
+/* --------------- Theme -----------------*/
+@theme "./themes/everforest.rasi"
+
+
+* {
+		font:                        "JetBrainsMono Nerd Font Medium 10";
+
+    background-color:            transparent;
+    text-color:                  @foreground;
+
+		border: 0;
+		margin: 0;
+		padding: 0;
+		spacing: 0;
+}
+
+window {
+		transparency:                "real";
+    location:                    center;
+    anchor:                      center;
+    fullscreen:                  false;
+    width:                       400px;
+    x-offset:                    0px;
+    y-offset:                    0px;
+    margin:                      0px;
+    padding:                     0px;
+    border:                      1px solid;
+    border-radius:               12px;
+    border-color:                @selected;
+    cursor:                      "default";
+    background-color:            @background;
+}
+
+mainbox {
+    padding:    12px;
+}
+
+inputbar {
+    text-color:                  @foreground;
+    border-color:                @selected;
+		background-color:            @background-alt;
+
+    border:                      2px;
+    border-radius:               16px;
+
+    padding:                     8px 16px;
+    spacing:                     8px;
+    children:                    [ entry ];
+}
+
+entry {
+    placeholder:                 "Search";
+    placeholder-color:           @foreground;
+}
+
+message {
+    margin:             				 12px 0 0;
+    border-radius:							 16px;
+    border-color:                @selected;
+    background-color:            @background-alt;
+    text-color:                  @foreground;
+}
+
+textbox {
+    padding:   								   8px 24px;
+}
+
+listview {
+    foreground-color:					   transparent;
+
+    margin:     						  	 12px 0 0;
+    lines:      								 6;
+    columns:  								   1;
+
+    fixed-height: 							 false;
+}
+
+element {
+    padding:                     8px 16px;
+    spacing:                     8px;
+		border-radius:               10px;
+		background-color:						 transparent;
+}
+
+element normal active,
+element alternate active,
+element selected urgent {
+    background-color:            var(active);
+    text-color:                  var(background);
+}
+
+element normal active,
+element alternate active,
+element selected urgent {
+    background-color:            var(active);
+    text-color:                  var(background);
+}
+
+element selected normal,
+elemant selected active {
+    background-color:            var(selected);
+    text-color:                  var(background);
+}
+
+element-icon {
+    size:           1em;
+    vertical-align: 0.5;
+}
+
+element-text {
+    text-color: inherit;
+}
+
+element selected {
+    text-color: @background;
+}

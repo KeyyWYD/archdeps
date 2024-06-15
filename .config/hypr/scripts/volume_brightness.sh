@@ -1,7 +1,6 @@
 #!/bin/bash
 
 volume_step=1
-brightness_step=4%
 max_volume=100
 notification_timeout=1000
 download_album_art=false
@@ -20,9 +19,8 @@ function get_mute {
 
 
 function get_brightness {
-    brightnessctl | grep -Po '[0-9]{1,3}' | head -n 1
+    brightnessctl -e4 -m | awk -F
 }
-
 
 # Returns a mute icon, a volume-low icon, or a volume-high icon, depending on the volume
 function get_volume_icon {
@@ -59,7 +57,7 @@ function get_album_art {
     elif [[ $url == "https://"* ]] && [[ $download_album_art == "true" ]]; then
         # Identify filename from URL
         filename="$(echo $url | sed "s/.*\///")"
-        
+
         # Download file to /tmp if it doesn't exist
         if [ ! -f "/tmp/$filename" ]; then
             wget -O "/tmp/$filename" "$url"
@@ -138,13 +136,13 @@ case $1 in
 
     brightness_up)
     # Increases brightness and displays the notification
-    brightnessctl s +$brightness_step 
+    brightnessctl -e4 set 4%+
     show_brightness_notif
     ;;
 
     brightness_down)
     # Decreases brightness and displays the notification
-    brightnessctl s $brightness_step-
+    brightnessctl -e4 set 4%-
     show_brightness_notif
     ;;
 

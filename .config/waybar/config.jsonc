@@ -1,130 +1,142 @@
 {
-    "layer": "top",
-    "height": 30,
-    "margin": 1,
-    "width": 1360,
-    "mod": "dock",
-    "exclusive": true,
-    "passthrough": false,
-    "gtk-layer-shell": true,
-    "reload_style_on_change": true,
+  "layer": "top",
+  "height": 30,
+  "margin": 1,
+  "mod": "dock",
+  "exclusive": true,
+  "passthrough": false,
+  "gtk-layer-shell": true,
+  "reload_style_on_change": true,
 
-    "modules-left": ["custom/menu", "hyprland/workspaces", "custom/separator", "hyprland/window"],
-    "modules-center":[""],
-    "modules-right": ["cpu", "memory", "network", "wireplumber", "battery", "custom/notification", "clock"],
+  "modules-left": ["custom/arch", "hyprland/workspaces"],
+  "modules-center":["clock"],
+  "modules-right": ["network", "backlight", "wireplumber", "battery", "custom/notification", "custom/power"],
 
-    "hyprland/workspaces": {
-        "disable-scroll": true,
-        "all-outputs": true,
-        "warp-on-scroll": false,
-        "format": "{icon}",
-        "format-icons": {
-          "default": "",
-          "active": "󰮯",
-          "urgent": "󰊠"
-          /*
-         "1": "",
-         "2": "",
-      	 "3": "",
-         "4": "",
-         "5": "",
-         "6": "󰙯",
-	       "7": "",
-         "urgent": "",
-         "focused": "",
-         "default": ""
-         */
-        },
-        "persistent_workspaces": {
-          "*": 7
-      }
-    },
-
-    "custom/separator": {
-      "format": "",
-      "tooltip": false
-    },
-
-    "custom/menu": {
+  "hyprland/workspaces": {
+      "disable-scroll": true,
+      "all-outputs": true,
+      "warp-on-scroll": false,
       "format": "{icon}",
-      "format-icons": {"default": ["󰣇"]},
-      "on-click": "env XDG_CURRENT_DESKTOP=GNOME gnome-control-center --verbose",
-      "escape": true,
-      "tooltip": false
-    },
-
-    "battery": {
-        "states": {
-            "good": 95,
-            "warning": 30,
-            "critical": 20
-        },
-        "format": "{icon} {capacity}%",
-        "rotate": 0,
-        "format-charging": " {capacity}%",
-        "format-plugged": " {capacity}%",
-        "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
-    },
-
-    "network": {
-      "tooltip": true,
-      "format-wifi": " ",
-      "rotate": 0,
-      "format-ethernet": "󰈀 ",
-      "tooltip-format": "Network: <big><b>{essid}</b></big>\nSignal strength: <b>{signaldBm}dBm ({signalStrength}%)</b>\nFrequency: <b>{frequency}MHz</b>\nInterface: <b>{ifname}</b>\nIP: <b>{ipaddr}/{cidr}</b>\nGateway: <b>{gwaddr}</b>\nNetmask: <b>{netmask}</b>",
-      "format-linked": "󰈀 {ifname} (No IP)",
-      "format-disconnected": "󰖪 ",
-      "tooltip-format-disconnected": "Disconnected",
-      "format-alt": "<span foreground='#a6e3a1'> {bandwidthDownBytes}</span> <span foreground='#f38ba8'> {bandwidthUpBytes}</span>",
-      "interval": 2,
-    },
-
-    "clock": {
-      "format": "󰥔 {:%I :%M %p   󰃭 %A, %d}",
-      "tooltip": false
-    },
-
-    "hyprland/window": {
-      "format": "{}",
-      "rewrite": {
-	      "(.*) - Discord": "Discord",
- 	      "Mozilla Firefox": "Firefox",
-        "(.*) — Mozilla Firefox": "Firefox",
-	      "class<Spotify>": "Spotify"
-      },
-      "max-length": 48
-    },
-
-    "wireplumber": {
-      "scroll-step": 5,
-      "format": "{icon} {volume}%",
-      "rotate": 0,
-      "on-click": "pkill pavucontrol || pavucontrol -t 3",
-      "format-bluetooth": "{volume}% {icon} {format_source}",
-      "format-bluetooth-muted": " {icon} {format_source}",
-      "format-muted": "",
-      "format-source": "{volume}% ",
-      "format-source-muted": "",
-      "tooltip-format": "{icon} {desc} // {volume}%",
       "format-icons": {
-      "headphone": "",
-      "hands-free": "",
-      "headset": "",
-      "phone": "",
-      "portable": "",
-      "car": "",
-      "default": ["", "", ""]
-      }
-    },
-
-    "cpu": {
-      "interval": 5,
-      "format": " {usage}%",
-      "max-length": 10,
-      "tooltip": false
-    },
-
-    "memory": {
-      "format": " {used:0.1f}G/{total:0.1f}G"
+        "default": "",
+        "active": "󰮯",
+        "urgent": "󰊠"
+        /*
+        "1": "",
+        "2": "",
+        "3": "",
+        "4": "",
+        "5": "",
+        "6": "󰙯",
+        "7": "",
+        "urgent": "",
+        "focused": "",
+        "default": ""
+        */
+      },
+      "persistent_workspaces": {
+        "*": 5
     }
+  },
+
+  /*
+  "hyprland/window": {
+    "format": "{}",
+    "rewrite": {
+      "(.*) - Discord": "Discord",
+      "Mozilla Firefox": "Firefox",
+      "(.*) — Mozilla Firefox": "Firefox",
+      "class<Spotify>": "Spotify"
+    },
+    "max-length": 48
+  },
+
+  "cpu": {
+    "interval": 5,
+    "format": " {usage}%",
+    "max-length": 10,
+    "tooltip": false
+  },
+
+  "memory": {
+    "format": " {used:0.1f}G/{total:0.1f}G"
+  },
+  */
+
+  "clock": {
+    "format": "󰃭 {:%A, %d  /  󰥔 %I :%M %p}",
+    "tooltip": false
+  },
+
+  "network": {
+    "format-wifi": "<span color='#67b0e8'></span>   {essid}  ",
+    "format-ethernet": "<span color='#67b0e8'></span>   {ifname}",
+    "format-linked": "<span color='#67b0e8'></span>  {ifname} (No IP)",
+    "format": "<span color='#67b0e8'></span>  Connected",
+    "format-disconnected": "<span color='#67b0e8'>󰖪</span>  Disconnected",
+    "interval": 60,
+    "on-click":""
+  },
+
+  "backlight": {
+    "format": " <span color='#DE4B75' >{icon}</span> {percent}%",
+    "format-icons": ["", "", "", "", "", "", "", "", ""],
+    "smooth-scrolling-threshold": 5.0
+  },
+
+  "wireplumber": {
+    "on-click": "pkill pavucontrol || pavucontrol -t 3",
+    "on-click-right": "amixer sset Master toggle 1>/dev/null",
+    "format": "<span foreground='#e5c76b'>{icon}</span> {volume}%",
+    "format-muted": "<span foreground='#e5c76b'></span>  Muted",
+    "format-icons": {
+      "headphone": " ",
+      "hands-free": " ",
+      "headset": " ",
+      "phone": " ",
+      "portable": " ",
+      "car": " ",
+      "default": [" ", " ", " "]
+    }
+  },
+
+  "battery": {
+    "states": {
+      "good": 95,
+      "warning": 30,
+      "critical": 20
+    },
+    "format": "{icon} {capacity}%",
+    "rotate": 0,
+    "format-charging": " {capacity}%",
+    "format-plugged": " {capacity}%",
+    //"format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+    "format-icons": ["", "", "", "", ""]
+  },
+
+  "custom/separator": {
+    "format": "",
+    "tooltip": false
+  },
+
+  "custom/arch": {
+    "format": "{icon}",
+    "format-icons": {"default": ["󰣇"]},
+    "on-click": "",
+    "escape": true,
+    "tooltip": false
+  },
+
+  "custom/notification": {
+    "format":"",
+    "on-click": "sleep 0.1 && swaync-client -rs && swaync-client -t",
+    "max-length": 10
+  },
+
+  "custom/power": {
+      "format": "<span color='#DE4B75'></span>",
+      "tooltip": false,
+      "on-click": "pkill rofi || bash $HOME/.config/rofi/applets/bin/powermenu.sh"
+      //"on-click": "sleep 0.1 && bash $HOME/.config/rofi/applets/bin/powermenu.sh"
   }
+}
