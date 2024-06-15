@@ -5,14 +5,17 @@
 
 sudo pacman -Syu
 
-echo '  _____    __  __  _____  _      __    __   _____    __  ___ '
-echo '  \_   \/\ \ \/ _\/__   \/_\    / /   / /   \_   \/\ \ \/ _ \'
-echo '   / /\/  \/ /\ \   / /\//_\\\  / /   / /     / /\/  \/ / /_\/'
-echo '/\/ /_/ /\  / _\ \ / / /  _  \/ /___/ /___/\/ /_/ /\  / /_\\ '
-echo '\____/\_\ \/  \__/ \/  \_/ \_/\____/\____/\____/\_\ \/____/ '
-echo NECESSARY COMPONENTS
+cat << "EOF"
 
-echo Installing yay . . .
+ _____    __  __  _____  _      __    __   _____    __  ___ 
+  \_   \/\ \ \/ _\/__   \/_\    / /   / /   \_   \/\ \ \/ _ \
+   / /\/  \/ /\ \   / /\//_\\  / /   / /     / /\/  \/ / /_\/
+/\/ /_/ /\  / _\ \ / / /  _  \/ /___/ /___/\/ /_/ /\  / /_\\ 
+\____/\_\ \/  \__/ \/  \_/ \_/\____/\____/\____/\_\ \/____/ 
+ECESSARY COMPONENTS
+
+Installing yay . . .
+EOF
 
 mkdir -p "$HOME"/tmp/
 cd "$HOME"/tmp/
@@ -65,7 +68,6 @@ base_PKGS=(
       'swaync'
       'swaybg'
       'stow'
-      'wayshot'
       'waybar'
       'wl-clipboard'
       'wf-recorder'
@@ -98,6 +100,7 @@ base_PKGS=(
 yay_PKGS=(
     'matugen-bin'
     'sddm-git'
+    'wayshot-git'
 )
 
 for pPKG in "${base_PKGS[@]}"; do
@@ -112,19 +115,19 @@ done
 
 systemctl --user --now enable pipewire pipewire-pulse pipewire-pulse.socket wireplumber
 
-echo
-echo
-echo '▓█████▄  ▒█████   ███▄    █ ▓█████ '
-echo '▒██▀ ██▌▒██▒  ██▒ ██ ▀█   █ ▓█   ▀ '
-echo '░██   █▌▒██░  ██▒▓██  ▀█ ██▒▒███   '
-echo '░▓█▄   ▌▒██   ██░▓██▒  ▐▌██▒▒▓█  ▄ '
-echo '░▒████▓ ░ ████▓▒░▒██░   ▓██░░▒████▒'
-echo ' ▒▒▓  ▒ ░ ▒░▒░▒░ ░ ▒░   ▒ ▒ ░░ ▒░ ░'
-echo ' ░ ▒  ▒   ░ ▒ ▒░ ░ ░░   ░ ▒░ ░ ░  ░'
-echo ' ░ ░  ░ ░ ░ ░ ▒     ░   ░ ░    ░   '
-echo '   ░        ░ ░           ░    ░  ░'
-echo ' ░                                 '
-echo '---- Restart to apply changes -----'
+cat << "EOF"
 
+▓█████▄  ▒█████   ███▄    █ ▓█████ 
+▒██▀ ██▌▒██▒  ██▒ ██ ▀█   █ ▓█   ▀ 
+░██   █▌▒██░  ██▒▓██  ▀█ ██▒▒███   
+░▓█▄   ▌▒██   ██░▓██▒  ▐▌██▒▒▓█  ▄ 
+░▒████▓ ░ ████▓▒░▒██░   ▓██░░▒████▒
+ ▒▒▓  ▒ ░ ▒░▒░▒░ ░ ▒░   ▒ ▒ ░░ ▒░ ░
+ ░ ▒  ▒   ░ ▒ ▒░ ░ ░░   ░ ▒░ ░ ░  ░
+ ░ ░  ░ ░ ░ ░ ▒     ░   ░ ░    ░   
+   ░        ░ ░           ░    ░  ░
+ ░                                 
+----- Restart to apply changes -----
 
+EOF
 
