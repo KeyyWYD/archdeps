@@ -124,6 +124,7 @@ for yPKG in "${yay_PKGS[@]}"; do
 done
 
 systemctl --user --now enable pipewire pipewire-pulse pipewire-pulse.socket wireplumber
+systemctl enable sddm
 
 cat << "EOF"
 
