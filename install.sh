@@ -1,20 +1,25 @@
 #!/usr/bin/env bash
-#-------------------------------------------------------------------------
-#  Arch Linux Post Install ( Hyprland )
-#-------------------------------------------------------------------------
+
+cat << "EOF"
+        .
+       / \
+      /^  \
+     /  _  \
+    /  | | ~\ 
+   /.-'   '-.\  Fetching prerequisites ...
+EOF
 
 sudo pacman -Syu
 
 cat << "EOF"
 
- _____    __  __  _____  _      __    __   _____    __  ___ 
-  \_   \/\ \ \/ _\/__   \/_\    / /   / /   \_   \/\ \ \/ _ \
-   / /\/  \/ /\ \   / /\//_\\  / /   / /     / /\/  \/ / /_\/
-/\/ /_/ /\  / _\ \ / / /  _  \/ /___/ /___/\/ /_/ /\  / /_\\ 
-\____/\_\ \/  \__/ \/  \_/ \_/\____/\____/\____/\_\ \/____/ 
-ECESSARY COMPONENTS
+┳      ┓┓•    
+┃┏┓┏╋┏┓┃┃┓┏┓┏┓
+┻┛┗┛┗┗┻┗┗┗┛┗┗┫
+             ┛ NECESSARY COMPONENTS
 
-Installing yay . . .
+Installing yay ...
+
 EOF
 
 mkdir -p "$HOME"/tmp/
@@ -24,7 +29,6 @@ cd yay && makepkg -si
 cd "$HOME"
 rm -rf tmp/yay
 yay --version
-
 
 base_PKGS=(
 
