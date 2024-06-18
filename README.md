@@ -1,7 +1,7 @@
 # Arch-stuffs
 
 ## Dependencies
- 
+
 Dependencies can be installed using `install.sh` (see "Install" section)
 
 ## Install
@@ -10,11 +10,9 @@ Dependencies can be installed using `install.sh` (see "Install" section)
 
 ```bash
 git clone https://github.com/KeyyWYD/arch-stuffs.git ~/.dotfiles
-cd ~/.dotfiles
-git submodule init
-git submodule update --recursive
+cd ~/.dotfiles && git submodule init && git submodule update --recursive
 
-chmod +x install.sh
+chmod +x setup.sh
 ./setup.sh
 
 stow .

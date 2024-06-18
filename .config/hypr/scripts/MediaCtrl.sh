@@ -7,25 +7,25 @@ music_icon="$HOME/.config/swaync/icons/music.png"
 # Play the next track
 play_next() {
     playerctl next
-    sleep 0.5 && show_music_notification
+    #sleep 0.5 && show_music_notification
 }
 
 # Play the previous track
 play_previous() {
     playerctl previous
-    sleep 0.5 && show_music_notification
+    #sleep 0.5 && show_music_notification
 }
 
 # Toggle play/pause
 toggle_play_pause() {
     playerctl play-pause
-    show_music_notification
+    #show_music_notification
 }
 
 # Stop playback
 stop_playback() {
     playerctl stop
-    notify-send -e -u low -i "$music_icon" "Playback Stopped"
+    #notify-send -e -u low -i "$music_icon" "Playback Stopped"
 }
 
 # Display notification with song information

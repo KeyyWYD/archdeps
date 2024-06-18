@@ -10,7 +10,7 @@
 
   "modules-left": ["custom/arch", "hyprland/workspaces", "custom/lizzy"],
   "modules-center":["clock"],
-  "modules-right": ["custom/weather", "backlight", "battery", "network", "wireplumber", "custom/notification", "custom/power"],
+  "modules-right": ["custom/weather", "backlight", "battery", "network", "custom/notification", "custom/power"],
 
   "hyprland/workspaces": {
       "disable-scroll": true,
@@ -71,7 +71,25 @@
 
   "clock": {
     "format": "󰃭 {:%A, %d  /  󰥔 %I :%M %p}",
-    "tooltip": false
+    "tooltip-format": "<tt>{calendar}</tt>",
+    "calendar": {
+      "mode": "month",
+      "mode-mon-col": 3,
+      "on-scroll": 1,
+      "on-click-right": "mode",
+      "format": {
+          "months": "<span color='#ffead3'><b>{}</b></span>",
+          "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+          "today": "<span color='#ff6699'><b>{}</b></span>"
+      }
+    },
+    "actions": {
+      "on-click-right": "mode",
+      "on-click-forward": "tz_up",
+      "on-click-backward": "tz_down",
+      "on-scroll-up": "shift_up",
+      "on-scroll-down": "shift_down"
+    }
   },
 
   "tray": {
@@ -81,14 +99,14 @@
   },
 
   "network": {
-    "format-wifi": "<span color='#67b0e8'></span>",
+    "format-wifi": "<span color='#67b0e8'> </span>",
     "format-ethernet": "<span color='#67b0e8'></span>   {ifname}",
     "format-linked": "<span color='#67b0e8'></span>  {ifname} (No IP)",
     "format": "<span color='#67b0e8'></span>  Connected",
     "format-disconnected": "<span color='#67b0e8'>󰖪</span>",
+    "tooltip-format": "<span color='#67b0e8'></span>  {essid}",
     "interval": 60,
-    "on-click":"",
-    "tooltip": true
+    "on-click":""
   },
 
   "backlight": {
@@ -101,8 +119,8 @@
   "wireplumber": {
     "on-click": "pkill pavucontrol || pavucontrol -t 3",
     "on-click-right": "amixer sset Master toggle 1>/dev/null",
-    "format": "<span foreground='#e5c76b'>{icon}</span> {volume}%",
-    "format-muted": "<span foreground='#e5c76b'></span>  Muted",
+    "format": "<span foreground='#e5c76b'>{icon}</span>",
+    "format-muted": "<span foreground='#e5c76b'></span>",
     "format-icons": {
       "headphone": " ",
       "hands-free": " ",
@@ -110,7 +128,7 @@
       "phone": " ",
       "portable": " ",
       "car": " ",
-      "default": [" ", " ", " "]
+      "default": ["", "", ""]
     },
     "tooltip": false
   },
@@ -151,11 +169,11 @@
 		  "Playing": "",
 		  "Paused": ""
 		},
-		"max-length": 45,
+		"max-length": 30,
 		"on-click":"playerctl --player=spotify play-pause",
 		"on-scroll-up":"playerctl --player=spotify next",
 		"on-scroll-down":"playerctl --player=spotify previous",
-    "exec": "lizzy --format ' {{title}} - {{artist}}' --autotoggle --mediaplayer spotify",
+    "exec": "lizzy --format ' {{title}} - {{artist}}' --autotoggle --mediaplayer spotify && cava",
 		"return-type": "json"
 	},
 
@@ -163,7 +181,7 @@
     "format": "{}",
     "tooltip": true,
     "interval": 60,
-    "exec": "python $HOME/.config/waybar/weather.py",
+    "exec": "python $HOME/.config/waybar/widgets/weather.py",
     "return-type": "json"
   },
 
@@ -176,7 +194,7 @@
   },
 
   "custom/power": {
-      "format": "<span color='#DE4B75'></span>",
+      "format": "<span color='#DE4B75'></span>",
       "escape": true,
       "tooltip": false,
       "on-click": "pkill rofi || bash $HOME/.config/rofi/applets/bin/powermenu.sh"

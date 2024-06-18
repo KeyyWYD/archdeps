@@ -1,7 +1,7 @@
 {
   	"$schema": "/etc/xdg/swaync/configSchema.json",
-  	"positionX": "right",
-  	"positionY": "top",
+  	"positionX": "center",
+  	"positionY": "bottom",
   	"layer": "overlay",
   	"control-center-layer": "top",
   	"layer-shell": true,
@@ -9,7 +9,7 @@
     "control-center-margin-top": 2,
     "control-center-margin-bottom": 2,
     "control-center-margin-right": 2,
-    "control-center-margin-left": 0,
+    "control-center-margin-left": 1000,
   	"notification-2fa-action": true,
   	"notification-inline-replies": false,
     "notification-icon-size": 48,

@@ -104,15 +104,15 @@ data['text'] = WEATHER_CODES[weather['current_condition'][0]['weatherCode']] + \
 
 
 data['tooltip'] = (
-    f"      Location:<span color='#92c1ff' size='10pt'> {weather['nearest_area'][0]['areaName'][0]['value']}, {weather['nearest_area'][0]['country'][0]['value']}</span>\n"
-    f"          Date:<span color='#92c1ff' size='10pt'> {datetime.now().strftime('%Y-%m-%d %I:%M %p')}</span>\n"
+    f"Location:<span color='#92c1ff' size='10pt'> {weather['nearest_area'][0]['areaName'][0]['value']}, {weather['nearest_area'][0]['country'][0]['value']}</span>\n"
+    f"Date:<span color='#92c1ff' size='10pt'> {datetime.now().strftime('%Y-%m-%d %I:%M %p')}</span>\n"
     f"\n<span color='#92c1ff' size='10pt'>    <u>Current Conditions</u></span>\n"
-    f"    Feels Like:<span color='#92c1ff' size='10pt'> {weather['current_condition'][0]['FeelsLikeC']}°</span>\n"
-    f"      Humidity:<span color='#92c1ff' size='10pt'> {weather['current_condition'][0]['humidity']}%</span>\n"
-    f"             Wind:<span color='#92c1ff' size='10pt'> {weather['current_condition'][0]['windspeedKmph']}Km/h</span>\n"
-    f"               Rain:<span color='#92c1ff' size='10pt'> {weather['current_condition'][0]['precipMM']}mm</span>\n"
-    f"      Last Rain:<span color='#92c1ff' size='10pt'> {weather['current_condition'][0]['observation_time']}</span>\n"
-    f"   Rain Totals:<span color='#92c1ff' size='10pt'> {weather['current_condition'][0]['precipMM']}mm</span>\n"
+    f"Feels Like:<span color='#92c1ff' size='10pt'> {weather['current_condition'][0]['FeelsLikeC']}°</span>\n"
+    f"Humidity:<span color='#92c1ff' size='10pt'> {weather['current_condition'][0]['humidity']}%</span>\n"
+    f"Wind:<span color='#92c1ff' size='10pt'> {weather['current_condition'][0]['windspeedKmph']}Km/h</span>\n"
+    f"Rain:<span color='#92c1ff' size='10pt'> {weather['current_condition'][0]['precipMM']}mm</span>\n"
+    f"Last Rain:<span color='#92c1ff' size='10pt'> {weather['current_condition'][0]['observation_time']}</span>\n"
+    f"Rain Totals:<span color='#92c1ff' size='10pt'> {weather['current_condition'][0]['precipMM']}mm</span>\n"
 )
 
 print(json.dumps(data))
