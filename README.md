@@ -2,7 +2,7 @@
 
 ## Dependencies
 
-Dependencies can be installed using `install.sh` (see "Install" section)
+Dependencies can be installed using `setup.sh` (see "Install" section)
 
 ## Install
 
