@@ -4,8 +4,8 @@
 \.gitignore
 \.gitmodules
 \.github
-
-install.sh
-scripts
+setup.sh
+extra
+Pictures
 ^/README.*
 ^/scrot.*

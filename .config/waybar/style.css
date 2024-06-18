@@ -1,13 +1,13 @@
 
 /*-- Catppuccin --*/
-@import "themes/everforest.css";
+@import "wallust/colors-waybar.css";
 
 * {
   border: none;
   font-family: JetBrainsMono, Symbols Nerd Font;
   font-size: 12px;
   min-height: 0;
-  color: @fgcol;
+  color: @foreground;
 }
 
 window#waybar {
@@ -18,55 +18,68 @@ window#waybar {
 #workspaces {
   border-radius:5px;
   box-shadow:0px 0px black;
-  background: #141b1e;
+  /* background: #141b1e; */
+  background: @background;
 }
 
-#network,
-#wireplumber,
-#clock,
-#battery,
 #custom-arch,
-#custom-power,
-#custom-notification {
-  margin-left:5px;
-  margin-right: 5px;
-  background: #141b1e;
-  border-radius:5px 0px 0px 5px;
-  padding-left:10px;
-  padding-right: 10px;
-}
-
-#network,
-#wireplumber,
-#backlight,
-#bluetooth,
-#custom-notification {
-  margin:0px;
-}
-
-#backlight,
-#bluetooth {
-  background: #141b1e;
-  border-radius:0px;
-
-}
-
-#wireplumber {
-  border-radius: 0px 5px 5px 0px;
-}
-
+#custom-lizzy,
 #clock,
-#workspaces,
-#battery,
-#custom-arch,
-#custom-power,
-#custom-notification {
+#custom-weather,
+#custom-power {
+  background: @background;
   border-radius: 5px;
 }
 
+#clock,
+#battery,
+#custom-arch,
+#custom-lizzy,
+#custom-weather,
+#custom-power {
+  margin-left:5px;
+  margin-right: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+#backlight {
+  background: @background;
+  border-radius:5px 0px 0px 5px;
+  padding-left: 10px;
+  padding-right: 5px;
+}
+
+#battery,
+#network,
+#bluetooth,
+#wireplumber {
+  background: @background;
+  border-radius:0px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#custom-notification {
+  background: @background;
+  border-radius: 0px 5px 5px 0px;
+  padding-left: 5px;
+  padding-right: 10px;
+}
+
+#battery,
+#network,
+#wireplumber,
+#backlight,
+#bluetooth {
+  margin:0px;
+}
+
+/*
 #cpu,
 #memory {
   padding: 0px 5px 0px 0px;
   margin: 5px 5px;
   color: #e69875;
 }
+  */

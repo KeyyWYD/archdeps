@@ -1,0 +1,185 @@
+{
+  "layer": "bottom",
+  "height": 30,
+  "margin": 1,
+  "mod": "dock",
+  "exclusive": true,
+  "passthrough": false,
+  "gtk-layer-shell": true,
+  "reload_style_on_change": true,
+
+  "modules-left": ["custom/arch", "hyprland/workspaces", "custom/lizzy"],
+  "modules-center":["clock"],
+  "modules-right": ["custom/weather", "backlight", "battery", "network", "wireplumber", "custom/notification", "custom/power"],
+
+  "hyprland/workspaces": {
+      "disable-scroll": true,
+      "all-outputs": true,
+      "warp-on-scroll": false,
+      "format": "{icon}",
+      "format-icons": {
+        "default": "",
+        "active": "󰮯",
+        "urgent": "󰊠"
+        /*
+        "1": "",
+        "2": "",
+        "3": "",
+        "4": "",
+        "5": "",
+        "6": "󰙯",
+        "7": "",
+        "urgent": "",
+        "focused": "",
+        "default": ""
+        */
+      },
+      "persistent-workspaces": {
+        "*": 5
+    }
+  },
+
+  /*
+  "hyprland/window": {
+    "format": "{}",
+    "rewrite": {
+      "(.*) - Discord": "Discord",
+      "Mozilla Firefox": "Firefox",
+      "(.*) — Mozilla Firefox": "Firefox",
+      "class<Spotify>": "Spotify"
+    },
+    "max-length": 48
+  },
+
+  "cpu": {
+    "interval": 5,
+    "format": " {usage}%",
+    "max-length": 10,
+    "tooltip": false
+  },
+
+  "memory": {
+    "format": " {used:0.1f}G/{total:0.1f}G"
+  },
+  */
+
+  "temperature": {
+    "critical-threshold": 50,
+    "format": " {temperatureC}°C",
+    "tooltip": false
+  },
+
+  "clock": {
+    "format": "󰃭 {:%A, %d  /  󰥔 %I :%M %p}",
+    "tooltip": false
+  },
+
+  "tray": {
+    "icon-size": 18,
+    "spacing": 10,
+    "tooltip": false
+  },
+
+  "network": {
+    "format-wifi": "<span color='#67b0e8'></span>",
+    "format-ethernet": "<span color='#67b0e8'></span>   {ifname}",
+    "format-linked": "<span color='#67b0e8'></span>  {ifname} (No IP)",
+    "format": "<span color='#67b0e8'></span>  Connected",
+    "format-disconnected": "<span color='#67b0e8'>󰖪</span>",
+    "interval": 60,
+    "on-click":"",
+    "tooltip": true
+  },
+
+  "backlight": {
+    "format": "<span color='#DE4B75' >{icon}</span> {percent}%",
+    "format-icons": ["", "", "", "", "", "", "", "", ""],
+    "smooth-scrolling-threshold": 5.0,
+    "tooltip": false
+  },
+
+  "wireplumber": {
+    "on-click": "pkill pavucontrol || pavucontrol -t 3",
+    "on-click-right": "amixer sset Master toggle 1>/dev/null",
+    "format": "<span foreground='#e5c76b'>{icon}</span> {volume}%",
+    "format-muted": "<span foreground='#e5c76b'></span>  Muted",
+    "format-icons": {
+      "headphone": " ",
+      "hands-free": " ",
+      "headset": " ",
+      "phone": " ",
+      "portable": " ",
+      "car": " ",
+      "default": [" ", " ", " "]
+    },
+    "tooltip": false
+  },
+
+  "battery": {
+    "states": {
+      "good": 95,
+      "warning": 30,
+      "critical": 20
+    },
+    "format": "{icon} {capacity}%",
+    "rotate": 0,
+    "format-charging": " {capacity}%",
+    "format-plugged": " {capacity}%",
+    "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+    //"format-icons": ["", "", "", "", ""],
+    "tooltip": false
+  },
+
+  /*
+  "custom/separator": {
+    "format": "",
+    "tooltip": false
+  },
+*/
+
+  "custom/arch": {
+    "format": "{icon}",
+    "format-icons": {"default": [""]},
+    "on-click": "",
+    "escape": true,
+    "tooltip": false
+  },
+
+  "custom/lizzy": {
+		"format": "<span color='#25be6a'>{icon}</span>  {}",
+		"format-icons": {
+		  "Playing": "",
+		  "Paused": ""
+		},
+		"max-length": 45,
+		"on-click":"playerctl --player=spotify play-pause",
+		"on-scroll-up":"playerctl --player=spotify next",
+		"on-scroll-down":"playerctl --player=spotify previous",
+    "exec": "lizzy --format ' {{title}} - {{artist}}' --autotoggle --mediaplayer spotify",
+		"return-type": "json"
+	},
+
+  "custom/weather": {
+    "format": "{}",
+    "tooltip": true,
+    "interval": 60,
+    "exec": "python $HOME/.config/waybar/weather.py",
+    "return-type": "json"
+  },
+
+  "custom/notification": {
+    "format":"",
+    "on-click": "sleep 0.1 && swaync-client -rs && swaync-client -t",
+    "max-length": 10,
+    "escape": true,
+    "tooltip": false
+  },
+
+  "custom/power": {
+      "format": "<span color='#DE4B75'></span>",
+      "escape": true,
+      "tooltip": false,
+      "on-click": "pkill rofi || bash $HOME/.config/rofi/applets/bin/powermenu.sh"
+      //"on-click": "sleep 0.1 && bash $HOME/.config/rofi/applets/bin/powermenu.sh"
+  }
+}

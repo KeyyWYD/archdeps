@@ -1,0 +1,45 @@
+
+/*
+ * Wallpaperrrr
+ */
+
+@import "~/.config/rofi/config.rasi"
+
+configuration {
+  modi: "drun";
+  drun-display-format: "{name}";
+  display-drun: " ";
+}
+
+imagebox {
+  orientation: vertical;
+  children:
+    [ "entry", "listbox"];
+}
+
+entry {
+  expand: false;
+  placeholder: "🎞️ Choose Wallpaper";
+}
+
+listview {
+  columns: 4;
+  lines: 3;
+}
+
+element {
+  orientation: vertical;
+  padding: 0px;
+  spacing: 0px;
+  border-radius: 15px;
+}
+
+element-icon {
+  size: 20%;
+}
+
+element-text {
+  font: "Fira Code SemiBold 12";
+  vertical-align: 0.5;
+  horizontal-align: 0.5;
+}

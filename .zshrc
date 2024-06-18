@@ -1,8 +1,14 @@
+
 export ZSH=$HOME/.zsh
 export EDITOR=codium
 
+### ---- Fetch  ----------------------------------------------------------
+#neofetch
+pfetch
+#fastfetch
+#catnap
+
 ### ---- Modules ----------------------------------------------------------
-# pfetch
 eval $(thefuck --alias)
 eval "$(zoxide init zsh)"
 

@@ -13,5 +13,5 @@ source: https://github.com/Gogh-Co/Gogh/blob/master/themes/Everforest%20Dark%20H
 @define-color cyan #83C092;
 @define-color white #D3C6AA;
 
-@define-color bgcol #272E33;
-@define-color fgcol #D3C6AA;
+@define-color background #272E33;
+@define-color foreground #D3C6AA;
