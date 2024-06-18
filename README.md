@@ -15,7 +15,7 @@ git submodule init
 git submodule update --recursive
 
 chmod +x install.sh
-./install.sh
+./setup.sh
 
 stow .
 ```
