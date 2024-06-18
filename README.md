@@ -10,7 +10,7 @@ Dependencies can be installed using `install.sh` (see "Install" section)
 
 ```bash
 git clone https://github.com/KeyyWYD/arch-stuffs.git ~/.dotfiles
-cd ~/dotfiles
+cd ~/.dotfiles
 git submodule init
 git submodule update --recursive
 
