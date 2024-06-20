@@ -2,9 +2,8 @@
 
 ## Power Menu
 
-# Import Current Theme
-source "$HOME"/.config/rofi/applets/shared/theme.bash
-theme="$style"
+# Set shared path
+dir="$HOME"/.config/rofi/applets/shared/
 
 # CMDs
 uptime="`uptime -p | sed -e 's/up //g'`"
@@ -26,7 +25,7 @@ rofi_cmd() {
 	rofi -dmenu \
 		-p "Goodbye ${USER}" \
 		-mesg "Uptime: $uptime" \
-		-theme ${theme}
+		-theme  ${dir}/config.rasi
 }
 
 # Pass variables to rofi dmenu
@@ -39,7 +38,7 @@ confirm_cmd() {
 	rofi -dmenu \
 		-p 'Confirmation' \
 		-mesg 'Are you Sure?' \
-		-theme ${theme}
+		-theme ${dir}/confirm.rasi
 }
 
 # Ask for confirmation

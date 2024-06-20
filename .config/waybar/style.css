@@ -30,9 +30,9 @@ tooltip {
   background: @background;
 }
 
+#clock,
 #custom-arch,
 #custom-lizzy,
-#clock,
 #custom-weather,
 #custom-power {
   background: @background;
@@ -73,6 +73,7 @@ tooltip {
   border-radius: 0px 5px 5px 0px;
   padding-left: 10px;
   padding-right: 15px;
+  margin-right: 5px;
 }
 
 #battery,
@@ -100,17 +101,3 @@ tooltip {
   font-weight: bold;
   font-size: 13;
 }
-
-
-
-/*
- * Depreciated
- *
-
-#cpu,
-#memory {
-  padding: 0px 5px 0px 0px;
-  margin: 5px 5px;
-  color: #e69875;
-}
-  */

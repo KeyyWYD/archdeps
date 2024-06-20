@@ -156,6 +156,7 @@ base_PKGS=(
     'fzf'                       # Command-line fuzzy finder
     'thefuck'                   # Corrects previous console command
     'zoxide'                    # Smarter `cd` command
+    'eza'                       # File lister
 
     # FONTS ---------------------------------------------------------------
     'noto-fonts'                # Google Noto fonts

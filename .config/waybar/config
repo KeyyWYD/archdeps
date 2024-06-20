@@ -10,7 +10,7 @@
 
   "modules-left": ["custom/arch", "hyprland/workspaces", "custom/lizzy"],
   "modules-center":["clock"],
-  "modules-right": ["custom/weather", "backlight", "battery", "network", "custom/notification", "custom/power"],
+  "modules-right": ["custom/weather", "backlight", "battery", "network", "custom/notification"],
 
   "hyprland/workspaces": {
       "disable-scroll": true,
@@ -18,50 +18,14 @@
       "warp-on-scroll": false,
       "format": "{icon}",
       "format-icons": {
-        "default": "",
+        "default": "",
         "active": "󰮯",
         "urgent": "󰊠"
-        /*
-        "1": "",
-        "2": "",
-        "3": "",
-        "4": "",
-        "5": "",
-        "6": "󰙯",
-        "7": "",
-        "urgent": "",
-        "focused": "",
-        "default": ""
-        */
       },
       "persistent-workspaces": {
         "*": 5
     }
   },
-
-  /*
-  "hyprland/window": {
-    "format": "{}",
-    "rewrite": {
-      "(.*) - Discord": "Discord",
-      "Mozilla Firefox": "Firefox",
-      "(.*) — Mozilla Firefox": "Firefox",
-      "class<Spotify>": "Spotify"
-    },
-    "max-length": 48
-  },
-
-  "cpu": {
-    "interval": 5,
-    "format": " {usage}%",
-    "max-length": 10,
-    "tooltip": false
-  },
-
-  "memory": {
-    "format": " {used:0.1f}G/{total:0.1f}G"
-  },
-  */
 
   "temperature": {
     "critical-threshold": 50,
@@ -144,21 +108,18 @@
     "format-charging": " {capacity}%",
     "format-plugged": " {capacity}%",
     "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
-    //"format-icons": ["", "", "", "", ""],
     "tooltip": false
   },
 
-  /*
   "custom/separator": {
     "format": "",
     "tooltip": false
   },
-*/
 
   "custom/arch": {
     "format": "{icon}",
     "format-icons": {"default": [""]},
-    "on-click": "",
+    "on-click": "sleep 0.1 && bash $HOME/.config/rofi/applets/bin/menu.sh",
     "escape": true,
     "tooltip": false
   },
@@ -197,7 +158,6 @@
       "format": "<span color='#DE4B75'></span>",
       "escape": true,
       "tooltip": false,
-      "on-click": "pkill rofi || bash $HOME/.config/rofi/applets/bin/powermenu.sh"
-      //"on-click": "sleep 0.1 && bash $HOME/.config/rofi/applets/bin/powermenu.sh"
+      "on-click": "sleep 0.1 && bash $HOME/.config/rofi/applets/bin/powermenu.sh"
   }
 }

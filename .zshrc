@@ -1,6 +1,14 @@
 
-export ZSH=$HOME/.zsh
-export EDITOR=codium
+ZSH=$HOME/.zsh
+EDITOR=codium
+
+check_aur() {
+    if command -v yay &> /dev/null; then
+        AUR_HELPER="yay"
+    elif command -v paru &> /dev/null; then
+        AUR_HELPER="paru"
+    fi
+}
 
 ### ---- Fetch  ----------------------------------------------------------
 #neofetch
@@ -14,20 +22,29 @@ eval "$(zoxide init zsh)"
 
 ### ---- auto completion & suggestions, syntax highlighting --------------------
 #source $ZSH/zsh-autocomplete/zsh-autocomplete.plugin.zsh
-#source $ZSH/zsh-autosuggestions/zsh-autosuggestions.zsh
-#source $ZSH/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $ZSH/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $ZSH/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 ### ---- profile mgmt ----------------------------------------------------------
 alias rlp=". ~/.zshrc"
-alias ep1="$EDITOR ~/.zshrc"
-alias ep2="$EDITOR ~/.bashrc"
+alias ezp="$EDITOR ~/.zshrc"
+alias ebp="$EDITOR ~/.bashrc"
 
-### ---- Shortcuts --------------------------------------------------------------
-alias ..='cd ..'
+### ---- Handy dir shortcuts ----------------------------------------------------
 alias cd='z'
-alias yay-clean='yay -Scc'
-alias sys-update='sudo pacman -Syu'
-alias sys-clean='sudo pacman -Sc'
+alias ..='cd ..'
+alias ...='cd ../..'
+alias .3='cd ../../..'
+alias .4='cd ../../../..'
+alias .5='cd ../../../../..'
+alias ls='eza -lha --git --git-repos --icons=auto'
+alias mkdir='mkdir -p'
+
+### ---- Handy aliases --------------------------------------------------------------
+alias vc='$EDITOR'
+alias rm-pkg='$AUR_HELPER -Rns'
+alias clean-pkg='$AUR_HELPER -Sc'
+alias sys-up='AUR_HELPER -Syu'
 
 ### ---- Git shortcuts ---------------------------------------------------------
 alias gcl='git clone'

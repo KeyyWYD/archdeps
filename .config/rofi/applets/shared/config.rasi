@@ -4,11 +4,9 @@ configuration {
 }
 
 
-@theme "../wallust/colors-rofi.rasi"
+@theme "../../wallust/colors-rofi.rasi"
 
 * {
-    /*font:                        "JetBrains Mono Nerd Font 10";*/
-
 	background-alt:              @selected-active-background;
     selected:                    @selected-urgent-background;
     active:                      @selected-normal-background;
@@ -55,8 +53,8 @@ prompt {
 
 message {
     enabled:                     true;
-    margin:                      0px 370px;
-    padding:                     15px;
+    margin:                      0px 300px;
+    padding:                     10px;
     border-radius:               100%;
     background-color:            @background-alt;
     text-color:                  @foreground;
