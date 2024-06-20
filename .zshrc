@@ -10,6 +10,8 @@ check_aur() {
     fi
 }
 
+check_aur
+
 ### ---- Fetch  ----------------------------------------------------------
 #neofetch
 pfetch
@@ -44,7 +46,7 @@ alias mkdir='mkdir -p'
 alias vc='$EDITOR'
 alias rm-pkg='$AUR_HELPER -Rns'
 alias clean-pkg='$AUR_HELPER -Sc'
-alias sys-up='AUR_HELPER -Syu'
+alias sys-up='$AUR_HELPER -Syu'
 
 ### ---- Git shortcuts ---------------------------------------------------------
 alias gcl='git clone'
