@@ -6,6 +6,5 @@
 \.github
 setup.sh
 extra
-Pictures
 ^/README.*
 ^/scrot.*

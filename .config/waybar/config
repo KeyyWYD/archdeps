@@ -1,80 +1,134 @@
 {
-  "layer": "bottom",
+  "layer": "top",
   "height": 30,
-  "margin": 1,
-  "mod": "dock",
+  "margin": 2,
   "exclusive": true,
   "passthrough": false,
-  "gtk-layer-shell": true,
+  "position": "top",
+  "fixed-center": true,
+  "ipc": true,
   "reload_style_on_change": true,
 
-  "modules-left": ["custom/arch", "hyprland/workspaces", "custom/lizzy"],
-  "modules-center":["clock"],
-  "modules-right": ["custom/weather", "backlight", "battery", "network", "custom/notification"],
+  "modules-left": [
+          "custom/arch",
+          "hyprland/workspaces",
+          "group/links"
+  ],
+
+  "modules-center":[
+    "clock"
+  ],
+
+  "modules-right": [
+          //"tray",
+          // "group/wireless",
+          "group/telementry",
+          "group/hardware",
+          "custom/power"
+  ],
+
+  "group/telementry": {
+    "orientation": "inherit",
+		"drawer": {
+			"transition-duration": 300,
+			"children-class": "not-memory",
+			"transition-left-to-right": false
+		},
+    "modules": [
+      "custom/system",
+      "cpu",
+      "memory",
+      "temperature"
+    ]
+  },
+
+  "group/hardware": {
+    "orientation": "horizontal",
+    "modules": [
+      "custom/space",
+      "wireplumber",
+      "custom/space",
+      "battery",
+      "custom/space"
+    ]
+  },
+
+  "group/wireless": {
+    "orientation": "horizontal",
+    "modules": [
+      "custom/space",
+      "network"
+    ]
+  },
+
+  "group/links": {
+    "orientation": "horizontal",
+    "modules": [
+        "custom/sh",
+        "custom/fm",
+        "custom/browser"
+      ]
+  },
+
 
   "hyprland/workspaces": {
-      "disable-scroll": true,
-      "all-outputs": true,
-      "warp-on-scroll": false,
-      "format": "{icon}",
-      "format-icons": {
-        "default": "",
-        "active": "󰮯",
-        "urgent": "󰊠"
-      },
-      "persistent-workspaces": {
-        "*": 5
+    "disable-scroll": true,
+    "all-outputs": true,
+    "warp-on-scroll": false,
+    "format": "{icon}",
+    "format-icons": {
+      "default": "",
+      "active": "󰮯",
+      "urgent": "󰊠"
+    },
+    "persistent-workspaces": {
+      "*": 4
     }
+  },
+
+  "cpu": {
+    "format": "   {usage}% / ",
+    "tooltip": false
+  },
+  "memory": {
+    "format": "   {}% / ",
+    "tooltip": false
   },
 
   "temperature": {
     "critical-threshold": 50,
-    "format": " {temperatureC}°C",
+    "format": "  {temperatureC}°C ",
     "tooltip": false
   },
 
   "clock": {
-    "format": "󰃭 {:%A, %d  /  󰥔 %I :%M %p}",
-    "tooltip-format": "<tt>{calendar}</tt>",
-    "calendar": {
-      "mode": "month",
-      "mode-mon-col": 3,
-      "on-scroll": 1,
-      "on-click-right": "mode",
-      "format": {
-          "months": "<span color='#ffead3'><b>{}</b></span>",
-          "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
-          "today": "<span color='#ff6699'><b>{}</b></span>"
-      }
-    },
-    "actions": {
-      "on-click-right": "mode",
-      "on-click-forward": "tz_up",
-      "on-click-backward": "tz_down",
-      "on-scroll-up": "shift_up",
-      "on-scroll-down": "shift_down"
-    }
+    "format": "󰃭 {:%A %h.%d  /    %I:%M %p}",
+    //"format": "  {:%I:%M %p}",
+    "format-alt": "󰃭  {:%d/%m/%y}",
+    "tooltip": false
   },
 
   "tray": {
-    "icon-size": 18,
-    "spacing": 10,
+    "icon-size": 21,
+    "spacing": 5,
     "tooltip": false
   },
 
   "network": {
-    "format-wifi": "<span color='#67b0e8'> </span>",
-    "format-ethernet": "<span color='#67b0e8'></span>   {ifname}",
-    "format-linked": "<span color='#67b0e8'></span>  {ifname} (No IP)",
-    "format": "<span color='#67b0e8'></span>  Connected",
-    "format-disconnected": "<span color='#67b0e8'>󰖪</span>",
-    "tooltip-format": "<span color='#67b0e8'></span>  {essid}",
-    "interval": 60,
-    "on-click":""
+    "format": "",
+    "format-wifi": " ",
+    "format-ethernet": "⬇{bandwidthDownBytes} ⬆{bandwidthUpBytes}",
+    //"tooltip-format": " {essid} via {gwaddr}\n             {signalStrength}% ",
+    "format-linked": "{ifname} (No IP)  ",
+    "format-disconnected": "󰖪 ",
+    "interval": 3,
+    //"on-click": "bash $HOME/.config/waybar/scripts/nmgui.sh",
+    //"on-click": "nmcli dev wifi rescan; hyprctl notify 5 1500 'rgb(d3c6aa)' 'Wifi rescan!'",
+    "tooltip": false
   },
 
   "backlight": {
-    "format": "<span color='#DE4B75' >{icon}</span> {percent}%",
+    "format": "{icon}  {percent}%",
     "format-icons": ["", "", "", "", "", "", "", "", ""],
     "smooth-scrolling-threshold": 5.0,
     "tooltip": false
@@ -83,16 +137,11 @@
   "wireplumber": {
     "on-click": "pkill pavucontrol || pavucontrol -t 3",
     "on-click-right": "amixer sset Master toggle 1>/dev/null",
-    "format": "<span foreground='#e5c76b'>{icon}</span>",
-    "format-muted": "<span foreground='#e5c76b'></span>",
+    "format": "{icon}   {volume:2}%",
+    "format-muted": " ",
     "format-icons": {
-      "headphone": " ",
-      "hands-free": " ",
-      "headset": " ",
-      "phone": " ",
-      "portable": " ",
-      "car": " ",
-      "default": ["", "", ""]
+      // "default": ["", "", " "]
+      "default": [""]
     },
     "tooltip": false
   },
@@ -103,11 +152,40 @@
       "warning": 30,
       "critical": 20
     },
-    "format": "{icon} {capacity}%",
+    "format": "{icon}   {capacity}%",
     "rotate": 0,
-    "format-charging": " {capacity}%",
-    "format-plugged": " {capacity}%",
-    "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+    "format-charging": "  {capacity}%",
+    "format-plugged": "  {capacity}%",
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "tooltip": false
+  },
+
+  "custom/browser": {
+    "format": " ",
+    "on-click": "firefox &",
+    "tooltip-format": "Open browser"
+  },
+
+  "custom/fm": {
+    "format": " ",
+    "on-click": "thunar &",
+    "tooltip-format": "Open filemanager"
+  },
+
+  "custom/sh": {
+    "format": " ",
+    "on-click": "alacritty &",
+    "tooltip-format": "Open terminal"
+  },
+
+  "custom/space": {
+    "format": " ",
     "tooltip": false
   },
 
@@ -116,33 +194,45 @@
     "tooltip": false
   },
 
+  "custom/system": {
+		"format": "<span size='small'>  </span>",
+    "on-click": "alacritty -e btop || kitty btop",
+		"tooltip": false
+	},
+
   "custom/arch": {
-    "format": "{icon}",
-    "format-icons": {"default": [""]},
-    "on-click": "sleep 0.1 && bash $HOME/.config/rofi/applets/bin/menu.sh",
-    "escape": true,
+    "format": "<span size='small'></span>",
+    "on-click": "pkill rofi || rofi -show drun -replace",
     "tooltip": false
   },
 
+  "custom/cava": {
+    //"exec-if": "pgrep -x spotify >/dev/null",
+    "exec": "bash ~/.config/waybar/scripts/cava.sh",
+    "esacpe": true,
+    "format": "{}"
+  },
+
   "custom/lizzy": {
-		"format": "<span color='#25be6a'>{icon}</span>  {}",
-		"format-icons": {
-		  "Playing": "",
-		  "Paused": ""
-		},
-		"max-length": 30,
-		"on-click":"playerctl --player=spotify play-pause",
-		"on-scroll-up":"playerctl --player=spotify next",
-		"on-scroll-down":"playerctl --player=spotify previous",
-    "exec": "lizzy --format ' {{title}} - {{artist}}' --autotoggle --mediaplayer spotify && cava",
-		"return-type": "json"
-	},
+    "format": "{icon}  {}",
+    "format-icons": {
+      "Playing": "",
+      "Paused": ""
+    },
+    "max-length": 20,
+    "on-click":"playerctl --player=spotify play-pause",
+    "on-scroll-up":"playerctl --player=spotify next",
+    "on-scroll-down":"playerctl --player=spotify previous",
+    "exec": "lizzy --format ' {{title}} - {{artist}}' --autotoggle --mediaplayer spotify",
+    "return-type": "json"
+  },
 
   "custom/weather": {
     "format": "{}",
     "tooltip": true,
     "interval": 60,
-    "exec": "python $HOME/.config/waybar/widgets/weather.py",
+    "exec": "python $HOME/.config/waybar/scripts/weather.py",
+    "exec-if": "ping wttr.in -c1",
     "return-type": "json"
   },
 
@@ -155,9 +245,9 @@
   },
 
   "custom/power": {
-      "format": "<span color='#DE4B75'></span>",
-      "escape": true,
-      "tooltip": false,
-      "on-click": "sleep 0.1 && bash $HOME/.config/rofi/applets/bin/powermenu.sh"
+    "format": "",
+    "escape": true,
+    "on-click": "wlogout -b 2",
+    "tooltip": false
   }
 }

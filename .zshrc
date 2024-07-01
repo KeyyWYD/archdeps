@@ -9,30 +9,30 @@ check_aur() {
         AUR_HELPER="paru"
     fi
 }
-
 check_aur
 
-### ---- Fetch  ----------------------------------------------------------
+### ---- zsh plugins -----------------------------------------------------------
+#source $ZSH/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+source $ZSH/zsh-history-substring-search/zsh-history-substring-search.zsh
+source $ZSH/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $ZSH/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+### ---- Fetch  ----------------------------------------------------------------
 #neofetch
 pfetch
 #fastfetch
 #catnap
 
-### ---- Modules ----------------------------------------------------------
+### ---- Modules ---------------------------------------------------------------
 eval $(thefuck --alias)
 eval "$(zoxide init zsh)"
-
-### ---- auto completion & suggestions, syntax highlighting --------------------
-#source $ZSH/zsh-autocomplete/zsh-autocomplete.plugin.zsh
-source $ZSH/zsh-autosuggestions/zsh-autosuggestions.zsh
-source $ZSH/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 ### ---- profile mgmt ----------------------------------------------------------
 alias rlp=". ~/.zshrc"
 alias ezp="$EDITOR ~/.zshrc"
 alias ebp="$EDITOR ~/.bashrc"
 
-### ---- Handy dir shortcuts ----------------------------------------------------
+### ---- Handy dir shortcuts ---------------------------------------------------
 alias cd='z'
 alias ..='cd ..'
 alias ...='cd ../..'
@@ -42,10 +42,11 @@ alias .5='cd ../../../../..'
 alias ls='eza -lha --git --git-repos --icons=auto'
 alias mkdir='mkdir -p'
 
-### ---- Handy aliases --------------------------------------------------------------
+### ---- Handy aliases ---------------------------------------------------------
+alias cls='clear'
 alias vc='$EDITOR'
 alias rm-pkg='$AUR_HELPER -Rns'
-alias clean-pkg='$AUR_HELPER -Sc'
+alias cl-pkg='$AUR_HELPER -Sc'
 alias sys-up='$AUR_HELPER -Syu'
 
 ### ---- Git shortcuts ---------------------------------------------------------

@@ -12,8 +12,9 @@ Dependencies can be installed using `setup.sh` (see "Install" section)
 git clone https://github.com/KeyyWYD/arch-stuffs.git ~/.dotfiles
 cd ~/.dotfiles && git submodule init && git submodule update --recursive
 
+stow .
+
 chmod +x setup.sh
 ./setup.sh
 
-stow .
 ```

@@ -1,33 +1,21 @@
 #!/bin/bash
-# /* ---- 💫 https://github.com/JaKooLit 💫 ---- */  ##
-# Scripts for refreshing waybar, rofi, swaync, wallust
 
-SCRIPTSDIR=$HOME/.config/hypr/scripts
-UserScripts=$HOME/.config/hypr/UserScripts
-
-# Define file_exists function
-file_exists() {
-    if [ -e "$1" ]; then
-        return 0  # File exists
-    else
-        return 1  # File does not exist
-    fi
-}
+# Original Author: JaKooLit
+# Script for refreshing programs
 
 # Kill already running processes
-_ps=(waybar rofi swaync)
+_ps=(waybar rofi dunst)
 for _prs in "${_ps[@]}"; do
     if pidof "${_prs}" >/dev/null; then
         pkill "${_prs}"
     fi
 done
 
-sleep 0.3
-# Relaunch waybar
+# Relaunch Programs
+sleep 0.2
 waybar &
 
-# relaunch swaync
 sleep 0.5
-swaync > /dev/null 2>&1 &
+dunst > /dev/null 2>&1 &
 
 exit 0

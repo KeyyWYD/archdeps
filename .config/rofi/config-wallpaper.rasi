@@ -1,29 +1,28 @@
 
-/*
- * Wallpaperrrr
- */
-
 @import "~/.config/rofi/config.rasi"
 
+/* ---- Configuration ---- */
 configuration {
   modi: "drun";
-  drun-display-format: "{name}";
-  display-drun: " ";
+}
+
+window {
+  width: 20%;
+  height: 99%;
+}
+
+inputbar {
+    enabled: false;
 }
 
 imagebox {
   orientation: vertical;
   children:
-    [ "entry", "listbox"];
-}
-
-entry {
-  expand: false;
-  placeholder: "🎞️ Choose Wallpaper";
+    ["listbox"];
 }
 
 listview {
-  columns: 4;
+  columns: 1;
   lines: 3;
 }
 
@@ -31,7 +30,6 @@ element {
   orientation: vertical;
   padding: 0px;
   spacing: 0px;
-  border-radius: 15px;
 }
 
 element-icon {

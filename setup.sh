@@ -4,18 +4,18 @@
 # Arch Post Install Script
 
 cat << "EOF"
-                                                  ,
-                .          ,-.       _,---._ __  / \
-               / \        /  )    .-'       `./ /   \
-              /   \      (  (   ,'            `/    /|
-             /     \      \  `-"             \'\   / |
-            /.      \      `.              ,  \ \ /  |
-           ,_ `.     \      /`.          ,'-`----Y   |
-          /   ``-     .    (            ;        |   '
-         /             `   |  ,-.    ,-'         |  /
-        /               `. |  | (   |            | /
-      .`      ."`".       \   |  \  `.___________|/
-     .       '     \       \ -'   `--'
+                                                 ,
+                .         ,-.       _,---._ __  / \
+               / \       /  )    .-'       `./ /   \
+              /   \     (  (   ,'            `/    /|
+             /     \     \  `-"             \'\   / |
+            /.      \     `.              ,  \ \ /  |
+           ,_ `.     \     /`.          ,'-`----Y   |
+          /   ``-     .   (            ;        |   '
+         /             `  |  ,-.    ,-'         |  /
+        /               `.|  | (   |            | /
+      .`      ."`".       \  |  \  `.___________|/
+     .       '     \       \-'   `--'
     /        \      ;     -.\
    /        .'     /._     `".
   /   .-"`             `"-.   `.
@@ -41,7 +41,6 @@ install_aur() {
     choice=$1
     case $choice in
         1)
-            echo "INSTALLING yay..."
             mkdir -p "$HOME"/tmp/
             cd "$HOME"/tmp/ || exit 1
             git clone 'https://aur.archlinux.org/yay.git'
@@ -50,7 +49,6 @@ install_aur() {
             yay --version
             ;;
         2)
-            echo "INSTALLING paru..."
             mkdir -p "$HOME"/tmp/
             cd "$HOME"/tmp/ || exit 1
             git clone 'https://aur.archlinux.org/paru.git'
@@ -69,7 +67,7 @@ check_aur() {
         AUR_HELPER="paru"
         echo "paru is already installed -- skipping"
     else
-        echo "No AUR helpers found. Installing..."
+        echo "No AUR helpers found."
 
         # Display menu and get user input
         echo ":: There are 2 available AUR helpers:"
@@ -103,8 +101,12 @@ check_aur
 # AUR packages to install
 aur_PKGS=(
     'auto-cpufreq'      # Automatic CPU frequency scaling tool
+    'cava'              # Audio Visualizer
     'sddm-git'          # Display manager (SDDM) from Git
-    'wayshot-bin'       # Screenshot utility for Wayland
+    'slurp'
+    'wallust-git'
+    'wayshot'       # Screenshot utility
+    'wlogout'
     'apple-fonts'       # Apple fonts
 )
 
@@ -129,15 +131,18 @@ base_PKGS=(
 
     # WINDOW MANAGER ------------------------------------------------------
     'hyprland'                  # wlroots-based Wayland compositor
+    'hyprlock'
+    'hypridle'
+    'dunst'                     # Notification daemon
     'rofi-wayland'              # Application launcher for Wayland
     'swappy'                    # Screenshot editing tool
-    'swaync'                    # Notification daemon for Sway
-    'swaybg'                    # Wallpaper setter for Sway
+    'sww'                       # Wallpaper
     'waybar'                    # System status bar for Sway
     'wl-clipboard'              # CLI copy/paste utilities for Wayland
     'wf-recorder'               # Screen recording tool for Wayland
 
     # DEPENDENCIES --------------------------------------------------------
+    'imagemagick'
     'polkit-kde-agent'          # Authentication agent for KDE
     'xdg-desktop-portal-hyprland'   # XDG Desktop Portal for Hyprland
     'qt5-imageformats'          # Qt5 image format plugins for Dolphin
@@ -222,7 +227,7 @@ cat << "EOF"
                ░ ░  ░ ░ ░ ░ ▒     ░   ░ ░    ░
                  ░        ░ ░           ░    ░  ░
                ░
-              ----- Restart to apply changes -----
+              ----- Reboot to apply changes -----
 
 
 EOF

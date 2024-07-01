@@ -1,12 +1,11 @@
 
-/*-- Catppuccin --*/
+/*-- Dynamic Theme --*/
 @import "wallust/colors-waybar.css";
 
 * {
   border: none;
   font-family: Mononoki Nerd Font Mono;
   font-size: 20px;
-  min-height: 0;
   color: @foreground;
 }
 
@@ -15,89 +14,125 @@ window#waybar {
   border-radius: 5px;
 }
 
-tooltip {
-  font-size: 14px;
-  background: @background;
-  color: @foreground;
-  border-radius: 10px;
-  border-width: 0px;
+button:hover {
+  background: inherit;
+  box-shadow: inset -3px -3px #ffffff;
 }
+
 
 #workspaces {
   border-radius:5px;
   box-shadow:0px 0px black;
-  /* background: #141b1e; */
   background: @background;
 }
 
-#clock,
-#custom-arch,
-#custom-lizzy,
-#custom-weather,
-#custom-power {
-  background: @background;
-  border-radius: 5px;
-}
 
-#clock,
-#battery,
-#custom-arch,
-#custom-lizzy,
-#custom-weather,
-#custom-power {
-  margin-left:5px;
-  margin-right: 5px;
-  padding-left: 10px;
-  padding-right: 10px;
-}
-
-#backlight {
-  background: @background;
-  border-radius:5px 0px 0px 5px;
-  padding-left: 10px;
-  padding-right: 5px;
-}
-
-#battery,
-#network,
-#bluetooth,
-#wireplumber {
-  background: @background;
-  border-radius:0px;
-  padding-left: 10px;
-  padding-right: 5px;
-}
-
-#custom-notification {
-  background: @background;
-  border-radius: 0px 5px 5px 0px;
-  padding-left: 10px;
-  padding-right: 15px;
-  margin-right: 5px;
-}
-
-#battery,
-#network,
-#wireplumber,
-#backlight,
-#bluetooth {
-  margin:0px;
-}
-
-/*
- * Fonts
- */
+#cpu,
+#memory,
+#temperature,
 #clock,
 #battery,
 #network,
 #wireplumber,
 #backlight,
 #bluetooth,
+#custom-lizzy,
+#custom-weather,
+#custom-power {
+  font-family: SF Pro;
+  font-weight: bold;
+  font-size: 14;
+}
+
+#clock,
 #custom-lizzy,
 #custom-weather,
 #custom-notification,
 #custom-power {
+  background: @background;
+  border-radius: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+#custom-arch {
   font-family: SF Pro;
   font-weight: bold;
-  font-size: 13;
+  font-size: 20;
+  background: @background;
+  border-radius: 5px;
+  margin-right: 3px;
+  padding: 0px 13px 0px 8px;
+}
+
+#taskbar {
+  background: @taskbar;
+  border-radius: 5px;
+  margin-left: 3px;
+  padding: 0px;
+}
+
+#taskbar button {
+  margin: 0px 1px;
+  border-radius: 5px;
+  padding: 0px 5px;
+}
+
+#taskbar button:hover {
+  background: @taskbar;
+  opacity: 1;
+  border: none;
+  box-shadow: none;
+}
+
+#tray,
+#custom-lizzy,
+#custom-weather {
+  margin-left: 3px;
+  margin-right: 3px;
+}
+
+#custom-space {
+  color: @background;
+}
+
+#wireless {
+  background: @background;
+  border-radius: 5px 0px 0px 5px;
+}
+
+#hardware {
+  background: @background;
+  border-radius: 5px;
+  margin-right: 3px;
+}
+
+#telementry {
+  background: @background;
+  border-radius: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin-left: 3px;
+  margin-right: 3px;
+}
+
+#custom-cava {
+  background: @background;
+  border-radius: 5px 0px 0px 5px;
+  padding: 0 5px;
+}
+
+#links {
+  margin: 0px 5px;
+}
+
+#custom-sh,
+#custom-fm,
+#custom-browser {
+    font-family: SF Pro;
+    font-weight: bold;
+    font-size: 16;
+    margin: 0px 3px;
+    opacity: 0.9;
+    color: @background;
 }
