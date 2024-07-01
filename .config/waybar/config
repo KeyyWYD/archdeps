@@ -1,7 +1,9 @@
 {
   "layer": "top",
   "height": 30,
-  "margin": 2,
+  "margin-top": 3,
+  "margin-left": 3,
+  "margin-right": 3,
   "exclusive": true,
   "passthrough": false,
   "position": "top",
@@ -167,21 +169,21 @@
   },
 
   "custom/browser": {
-    "format": " ",
-    "on-click": "firefox &",
-    "tooltip-format": "Open browser"
+    "format": "󰈹 ",
+    "on-click": "firefox",
+    "tooltip-format": "Browser"
   },
 
   "custom/fm": {
-    "format": " ",
-    "on-click": "thunar &",
-    "tooltip-format": "Open filemanager"
+    "format": " ",
+    "on-click": "dolphin || thunar ",
+    "tooltip-format": "Filemanager"
   },
 
   "custom/sh": {
-    "format": " ",
-    "on-click": "alacritty &",
-    "tooltip-format": "Open terminal"
+    "format": "  ",
+    "on-click": "alacritty || kitty",
+    "tooltip-format": "Terminal"
   },
 
   "custom/space": {

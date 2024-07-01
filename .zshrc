@@ -18,10 +18,10 @@ source $ZSH/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $ZSH/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 ### ---- Fetch  ----------------------------------------------------------------
-#neofetch
-pfetch
-#fastfetch
-#catnap
+# neofetch
+# pfetch
+fastfetch
+# catnap
 
 ### ---- Modules ---------------------------------------------------------------
 eval $(thefuck --alias)
@@ -45,9 +45,9 @@ alias mkdir='mkdir -p'
 ### ---- Handy aliases ---------------------------------------------------------
 alias cls='clear'
 alias vc='$EDITOR'
-alias rm-pkg='$AUR_HELPER -Rns'
-alias cl-pkg='$AUR_HELPER -Sc'
-alias sys-up='$AUR_HELPER -Syu'
+alias rmpkg='$AUR_HELPER -Rns'
+alias clpkg='$AUR_HELPER -Sc'
+alias sysup='$AUR_HELPER -Syyu'
 
 ### ---- Git shortcuts ---------------------------------------------------------
 alias gcl='git clone'
