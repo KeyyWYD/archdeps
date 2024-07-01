@@ -136,7 +136,7 @@ base_PKGS=(
     'dunst'                     # Notification daemon
     'rofi-wayland'              # Application launcher for Wayland
     'swappy'                    # Screenshot editing tool
-    'sww'                       # Wallpaper
+    'swww'                       # Wallpaper
     'waybar'                    # System status bar for Sway
     'wl-clipboard'              # CLI copy/paste utilities for Wayland
     'wf-recorder'               # Screen recording tool for Wayland
