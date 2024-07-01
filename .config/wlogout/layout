@@ -10,7 +10,7 @@
 }
 {
     "label" : "logout",
-    "action" : "loginctl terminate-user $USER",
+    "action" : "killall -9 Hyprland sleep 2",
     "keybind" : "e"
 }
 {

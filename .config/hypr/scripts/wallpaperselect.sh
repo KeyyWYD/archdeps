@@ -12,7 +12,7 @@ blurred_wp="$HOME/.cache/swww/wp_blurred.png"
 focused_monitor=$(hyprctl monitors | awk '/^Monitor/{name=$2} /focused: yes/{print name}')
 
 # Variables
-blur="50x30"
+blur="25x15"
 FPS=60
 TYPE="any"
 DURATION=2

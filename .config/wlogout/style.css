@@ -33,14 +33,14 @@ button:hover {
 
 
 #lock {
-	background-color: @color3;
+	background-color: @color4;
 	margin-left: 300px;
 	border-radius: 5px 0px 0px 0px;
 	background-image: image(url("icons/lock.png"));
 }
 
 #reboot {
-	background-color: @color4;
+	background-color: @color2;
 	margin-left: 300px;
 	border-radius: 0px 0px 0px 5px;
 	background-image: image(url("icons/reboot.png"));
@@ -48,14 +48,14 @@ button:hover {
 
 
 #logout {
-	background-color: @color4;
+	background-color: @color2;
 	margin-right: 300px;
 	border-radius: 0px 5px 0px 0px;
 	background-image: image(url("icons/logout.png"));
 }
 
 #shutdown {
-	background-color: @color3;
+	background-color: @color4;
 	margin-right: 300px;
 	border-radius: 0px 0px 5px 0px;
 	background-image: image(url("icons/shutdown.png"));
